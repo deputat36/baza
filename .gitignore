@@ -1,0 +1,22 @@
+# Local files
+*.local
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+
+# Private exports
+/private/
+/secrets/
+/confidential/
+*.key
+*.pem
+*.env
+.env
+.env.*
+
+# Office working files that should be checked before commit
+*_private.csv
+*_internal.csv
+*_contacts_full.csv
+*_clients.csv
