@@ -23,6 +23,7 @@ python scripts/tools/build_data_report.py
 python scripts/tools/build_source_coverage_report.py
 python scripts/tools/build_id_registry_report.py
 python scripts/tools/build_schema_report.py
+python scripts/tools/build_preflight_summary.py
 python scripts/tools/list_project_files.py
 ```
 
@@ -50,6 +51,7 @@ python scripts/tools/privacy_scan.py --strict
 - Отчёт покрытия CSV-источников XLSX-сборкой.
 - Реестр ID и возможные дубли.
 - Отчёт по схемам CSV.
+- Preflight-сводка.
 - Инвентаризация файлов.
 
 ## Что блокирует проверку
@@ -60,10 +62,11 @@ python scripts/tools/privacy_scan.py --strict
 
 `privacy_scan.py` по умолчанию печатает предупреждения и не блокирует процесс. В строгом режиме `--strict` он завершится с ошибкой при найденных рисках.
 
-`build_source_coverage_report.py`, `build_id_registry_report.py` и `build_schema_report.py` формируют диагностические отчёты для ручной проверки.
+`build_source_coverage_report.py`, `build_id_registry_report.py`, `build_schema_report.py` и `build_preflight_summary.py` формируют диагностические отчёты для ручной проверки.
 
 ## Что проверить вручную
 
+- Сначала открыть `build/preflight-summary.md`.
 - Нет ли реальных рабочих контактов.
 - Нет ли данных клиентов.
 - Нет ли закрытых условий.
