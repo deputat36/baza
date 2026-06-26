@@ -28,7 +28,7 @@ jobs:
       - name: Validate CSV structure
         run: python scripts/tools/validate_csv_structure.py
 
-      - name: Privacy scan
+      - name: Privacy scan warning report
         run: python scripts/tools/privacy_scan.py
 
       - name: Build XLSX preview
