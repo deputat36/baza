@@ -12,9 +12,10 @@
 2. `docs/intermediate-preview.md` — быстрый обзор того, что уже собрано.
 3. `docs/project-index.md` — карта всех файлов проекта.
 4. `docs/html-preview.md` — как собрать просмотр в браузере.
-5. `docs/google-sheets-mvp.md` — как будет устроена первая Google Таблица.
-6. `docs/google-sheet-launch-checklist.md` — чек-лист запуска закрытой таблицы.
-7. `docs/google-apps-script-setup.md` — скрипты настройки таблицы.
+5. `docs/github-pages-preview.md` — как опубликовать просмотр через GitHub Pages.
+6. `docs/google-sheets-mvp.md` — как будет устроена первая Google Таблица.
+7. `docs/google-sheet-launch-checklist.md` — чек-лист запуска закрытой таблицы.
+8. `docs/google-apps-script-setup.md` — скрипты настройки таблицы.
 
 ## Что уже можно оценить без сборки
 
@@ -53,6 +54,20 @@ build/html-preview/index.html
 ```
 
 Этот вариант удобен для быстрого просмотра CSV-структуры без Excel и Google Таблицы.
+
+Если в репозитории включён GitHub Pages с источником `GitHub Actions`, HTML-превью можно опубликовать через workflow:
+
+```text
+Actions -> Publish HTML preview -> Run workflow
+```
+
+Ожидаемый адрес обычно выглядит так:
+
+```text
+https://deputat36.github.io/baza/
+```
+
+Точный адрес нужно смотреть в настройках GitHub Pages или в результате workflow.
 
 ## Как посмотреть промежуточный XLSX
 
