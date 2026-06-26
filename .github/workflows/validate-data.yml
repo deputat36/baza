@@ -52,6 +52,9 @@ jobs:
       - name: Build import plan
         run: python scripts/tools/build_import_plan.py
 
+      - name: Build Google Sheet tabs plan
+        run: python scripts/tools/build_google_sheet_tabs_plan.py
+
       - name: Build preflight summary
         run: python scripts/tools/build_preflight_summary.py
 
