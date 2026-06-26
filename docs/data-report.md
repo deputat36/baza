@@ -17,10 +17,30 @@
 python scripts/tools/build_data_report.py
 ```
 
+Через Makefile:
+
+```bash
+make report
+```
+
 Результат сохраняется здесь:
 
 ```text
 build/data-report.md
+```
+
+## Связанный отчёт
+
+Для проверки того, какие CSV входят в XLSX, используется отдельный отчёт:
+
+```bash
+make coverage
+```
+
+Он сохраняется здесь:
+
+```text
+build/source-coverage-report.md
 ```
 
 ## Использование
