@@ -1,17 +1,23 @@
 """
 Проверка источников XLSX-сборки.
 
-Скрипт проверяет, что все CSV-файлы, указанные в SHEETS генератора
-`scripts/tools/build_workbook_from_csv.py`, существуют и читаются.
+Скрипт проверяет, что все CSV-файлы, указанные в `workbook_config.py`,
+существуют и читаются.
 
 Запуск:
 python scripts/tools/validate_workbook_sources.py
 """
 
-from pathlib import Path
+import csv
 import sys
+from pathlib import Path
 
-from build_workbook_from_csv import ROOT, SHEETS, read_csv_rows
+from workbook_config import ROOT, SHEETS
+
+
+def read_csv_rows(path: Path):
+    with path.open("r", encoding="utf-8-sig", newline="") as file:
+        return list(csv.reader(file))
 
 
 def validate_source(relative_path: str):
