@@ -11,6 +11,7 @@
 ## Главные документы
 
 - `README.md` — общее описание проекта.
+- `docs/start-here.md` — первый документ для просмотра проекта.
 - `docs/concept.md` — концепция базы знаний.
 - `docs/structure.md` — сущности, категории и логика ID.
 - `docs/google-sheets-mvp.md` — MVP в Google Таблице.
@@ -86,6 +87,7 @@
 - `data/drafts/training-checklists.csv` — обучение.
 - `data/drafts/common-mistakes.csv` — частые ошибки.
 - `data/drafts/user-scenarios.csv` — пользовательские сценарии.
+- `data/drafts/manager-review-checklist.csv` — чек-лист первичного просмотра менеджера.
 
 ## Справочники
 
@@ -124,9 +126,10 @@
 ## Рекомендуемый порядок просмотра
 
 1. `README.md`
-2. `docs/intermediate-preview.md`
-3. `docs/project-index.md`
-4. `docs/google-sheets-mvp.md`
-5. `docs/private-google-sheet-setup.md`
-6. `docs/google-sheet-launch-checklist.md`
-7. `data/drafts/`
+2. `docs/start-here.md`
+3. `docs/intermediate-preview.md`
+4. `docs/project-index.md`
+5. `docs/google-sheets-mvp.md`
+6. `docs/private-google-sheet-setup.md`
+7. `docs/google-sheet-launch-checklist.md`
+8. `data/drafts/`
