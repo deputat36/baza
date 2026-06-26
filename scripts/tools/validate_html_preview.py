@@ -19,9 +19,12 @@ REQUIRED_MARKERS = [
     "HTML-превью CSV-структуры",
     "XLSX-источники",
     "table-wrap",
+    "previewSearch",
+    "quick-nav",
+    "visibleCount",
 ]
 
-MIN_SIZE_BYTES = 3000
+MIN_SIZE_BYTES = 5000
 
 
 def main():
