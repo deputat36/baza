@@ -38,6 +38,10 @@
 
 Должен завершаться успешно, если можно собрать план импорта.
 
+`python scripts/tools/build_google_sheet_tabs_plan.py`
+
+Должен завершаться успешно, если можно собрать план листов Google Таблицы.
+
 `python scripts/tools/build_preflight_summary.py`
 
 Должен завершаться успешно, если можно собрать сводку preflight-артефактов.
@@ -53,6 +57,10 @@
 `build/preflight-summary.md`
 
 Показывает список артефактов и ручной чек-лист.
+
+`build/google-sheet-tabs-plan.md` и `build/google-sheet-tabs-plan.csv`
+
+Показывают порядок листов и базовые настройки закрытой Google Таблицы.
 
 `build/import-plan.md` и `build/import-plan.csv`
 
