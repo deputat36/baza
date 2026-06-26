@@ -45,18 +45,25 @@ build/import-plan.md
 ```text
 scripts/google-apps-script/setup-baza.gs
 scripts/google-apps-script/setup_baza_sheet.gs
+scripts/google-apps-script/menu.gs
 ```
 
-Порядок функций:
+Ручной порядок функций:
 
 ```text
 setupBazaKnowledgeSheet
 applyBazaSheetFormattingPlan
 ```
 
+Через меню Google Таблицы:
+
+```text
+База знаний -> Полная подготовка таблицы
+```
+
 ## Проверка перед выдачей сотрудникам
 
-- Запустить `validateBazaKnowledgeSheet` из `scripts/google-apps-script/validate-baza-sheet.gs`.
+- Запустить `validateBazaKnowledgeSheet` из `scripts/google-apps-script/validate-baza-sheet.gs` или пункт `База знаний -> 3. Проверить данные`.
 - Открыть лист `Проверка данных`.
 - Исправить пустые ID, дубли заголовков, пустые заголовки, неверные статусы и приоритеты.
 - Запустить проверку повторно.
