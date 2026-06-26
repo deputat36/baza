@@ -30,6 +30,12 @@ make install
 make preflight
 ```
 
+Для отдельной проверки обязательных CSV-источников XLSX:
+
+```bash
+make sources
+```
+
 Основные результаты сборки находятся в `build/`:
 
 - `baza-knowledge-mvp.xlsx` — промежуточная Excel-книга;
