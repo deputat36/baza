@@ -40,6 +40,9 @@ jobs:
       - name: Build HTML preview
         run: python scripts/tools/build_html_preview.py
 
+      - name: Validate HTML preview
+        run: python scripts/tools/validate_html_preview.py
+
       - name: Build data report
         run: python scripts/tools/build_data_report.py
 
