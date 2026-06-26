@@ -42,6 +42,10 @@
 
 Должен завершаться успешно, если можно собрать план листов Google Таблицы.
 
+`python scripts/tools/build_google_sheet_validation_plan.py`
+
+Должен завершаться успешно, если можно собрать план выпадающих списков Google Таблицы.
+
 `python scripts/tools/build_preflight_summary.py`
 
 Должен завершаться успешно, если можно собрать сводку preflight-артефактов.
@@ -61,6 +65,10 @@
 `build/google-sheet-tabs-plan.md` и `build/google-sheet-tabs-plan.csv`
 
 Показывают порядок листов и базовые настройки закрытой Google Таблицы.
+
+`build/google-sheet-validation-plan.md` и `build/google-sheet-validation-plan.csv`
+
+Показывают справочники и значения для выпадающих списков.
 
 `build/import-plan.md` и `build/import-plan.csv`
 
