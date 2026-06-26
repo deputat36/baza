@@ -1,6 +1,6 @@
 PYTHON=python
 
-.PHONY: install validate validate-warn sources privacy privacy-strict xlsx report coverage ids schemas import-plan tabs-plan validation-plan formatting-plan summary inventory preflight
+.PHONY: install validate validate-warn sources privacy privacy-strict xlsx html-preview report coverage ids schemas import-plan tabs-plan validation-plan formatting-plan summary inventory preflight
 
 install:
 	pip install -r requirements.txt
@@ -22,6 +22,9 @@ privacy-strict:
 
 xlsx: sources
 	$(PYTHON) scripts/tools/build_workbook_from_csv.py
+
+html-preview:
+	$(PYTHON) scripts/tools/build_html_preview.py
 
 report:
 	$(PYTHON) scripts/tools/build_data_report.py
@@ -53,4 +56,4 @@ summary:
 inventory:
 	$(PYTHON) scripts/tools/list_project_files.py
 
-preflight: validate sources privacy xlsx report coverage ids schemas import-plan tabs-plan validation-plan formatting-plan summary inventory
+preflight: validate sources privacy xlsx html-preview report coverage ids schemas import-plan tabs-plan validation-plan formatting-plan summary inventory
