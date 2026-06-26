@@ -10,10 +10,31 @@
 
 `scripts/tools/build_workbook_from_csv.py`
 
+## Проверка источников
+
+Перед сборкой нужно проверить, что все обязательные CSV-источники существуют и читаются:
+
+```bash
+python scripts/tools/validate_workbook_sources.py
+```
+
+Через Makefile:
+
+```bash
+make sources
+```
+
 ## Запуск
 
 ```bash
-pip install openpyxl
+pip install -r requirements.txt
+make xlsx
+```
+
+Если Makefile недоступен:
+
+```bash
+python scripts/tools/validate_workbook_sources.py
 python scripts/tools/build_workbook_from_csv.py
 ```
 
