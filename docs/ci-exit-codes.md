@@ -10,9 +10,17 @@
 
 Возвращает `1`, если найдены структурные проблемы CSV.
 
+`python scripts/tools/validate_workbook_sources.py`
+
+Возвращает `1`, если обязательный источник XLSX отсутствует, пустой или не читается.
+
 `python scripts/tools/build_workbook_from_csv.py`
 
 Должен завершаться успешно, если из текущих CSV можно собрать XLSX.
+
+`python scripts/tools/build_data_report.py`
+
+Должен завершаться успешно, если можно собрать технический отчёт по CSV.
 
 ## Предупреждающие проверки
 
