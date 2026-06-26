@@ -1,21 +1,24 @@
 # Макет Google Таблицы
 
-## Генерируемый план
+## Генерируемые планы
 
-Для настройки фактической закрытой Google Таблицы используется генерируемый план:
+Для настройки фактической закрытой Google Таблицы используются генерируемые планы:
 
 ```text
 build/google-sheet-tabs-plan.md
 build/google-sheet-tabs-plan.csv
+build/google-sheet-validation-plan.md
+build/google-sheet-validation-plan.csv
 ```
 
-Создать его можно командой:
+Создать их можно командами:
 
 ```bash
 make tabs-plan
+make validation-plan
 ```
 
-План строится по `scripts/tools/workbook_config.py`, поэтому совпадает с XLSX-сборкой и планом импорта.
+Планы строятся по `scripts/tools/workbook_config.py` и справочникам из `data/dictionaries`, поэтому совпадают с XLSX-сборкой, планом импорта и выпадающими списками.
 
 ## Лист 1. Главная
 
