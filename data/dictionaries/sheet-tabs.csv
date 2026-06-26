@@ -1,0 +1,10 @@
+code,name,purpose,main_user,source_files,privacy
+HOME,Главная,Быстрый вход в базу и частые сценарии,Все,docs/google-sheet-layout.md,PRIVATE
+CONTACTS,Контакты,Организации партнёры и рабочие контакты,Все,templates/contacts-template.csv; data/drafts/*.csv,PRIVATE
+SITUATIONS,Ситуации,Ответы на рабочие вопросы по сделкам,СПН стажёр менеджер,templates/situations-template.csv; data/drafts/situations-real-estate.csv,PRIVATE
+KNOWLEDGE,База знаний,Документы инструкции шаблоны и FAQ,Все,templates/knowledge-template.csv; data/drafts/documents-real-estate.csv,PRIVATE
+PRACTICE,Практика,Короткие советы сотрудников,СПН менеджер,templates/practice-note-template.csv,PRIVATE
+CHANGES,Предложения изменений,Поток правок и новых идей,Все,templates/change-request-template.csv,PRIVATE
+DICTIONARIES,Справочники,Технические списки для выпадающих полей,Администратор,data/dictionaries/*.csv,PRIVATE
+KEYWORDS,Ключевые слова,Поиск по разговорным формулировкам,Все,data/dictionaries/search-keywords.csv,PRIVATE
+PARTNER_RATING,Оценка партнёров,Качество работы подрядчиков и партнёров,Менеджер СПН,data/drafts/partner-rating-template.csv,PRIVATE
