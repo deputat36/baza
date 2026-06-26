@@ -22,6 +22,7 @@
 - `docs/google-sheets-mvp.md` — как будет устроена первая Google Таблица.
 - `docs/import-manifest.md` — порядок импорта данных в рабочую таблицу.
 - `docs/html-preview.md` — как собрать HTML-превью для просмотра в браузере.
+- `docs/github-pages-preview.md` — как опубликовать HTML-превью через GitHub Pages.
 - `docs/knowledge-base-metrics.md` — как оценивать пользу базы.
 - `docs/next-actions.md` — ближайшие действия.
 - `data/drafts/` — черновики данных для будущего импорта.
@@ -48,6 +49,8 @@ make sources
 - `data-report.md` — техническая сводка по CSV-файлам.
 
 В GitHub Actions эти файлы сохраняются как артефакт `baza-build-artifacts`.
+
+Для публикации HTML-превью через GitHub Pages используется workflow `Publish HTML preview`.
 
 ## Важное правило безопасности
 
