@@ -28,6 +28,7 @@
 - `docs/generated-google-sheet-tabs-plan.md` — генерируемый план листов Google Таблицы.
 - `docs/generated-google-sheet-validation-plan.md` — генерируемый план выпадающих списков.
 - `docs/generated-google-sheet-formatting-plan.md` — генерируемый план оформления Google Таблицы.
+- `docs/google-apps-script-menu.md` — меню `База знаний` в Google Таблице.
 - `docs/google-apps-script-validation.md` — проверка закрытой Google Таблицы через Apps Script.
 - `docs/google-sheet-launch-checklist.md` — чек-лист запуска таблицы.
 - `docs/first-user-test.md` — сценарий первого теста.
@@ -114,6 +115,7 @@
 - `scripts/google-apps-script/setup-baza.gs` — базовая настройка закрытой Google Таблицы.
 - `scripts/google-apps-script/setup_baza_sheet.gs` — оформление закрытой Google Таблицы.
 - `scripts/google-apps-script/validate-baza-sheet.gs` — проверка закрытой Google Таблицы.
+- `scripts/google-apps-script/menu.gs` — меню `База знаний` в закрытой Google Таблице.
 
 ## Будущее развитие
 
