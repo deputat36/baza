@@ -11,9 +11,10 @@
 1. `README.md` — общее описание.
 2. `docs/intermediate-preview.md` — быстрый обзор того, что уже собрано.
 3. `docs/project-index.md` — карта всех файлов проекта.
-4. `docs/google-sheets-mvp.md` — как будет устроена первая Google Таблица.
-5. `docs/google-sheet-launch-checklist.md` — чек-лист запуска закрытой таблицы.
-6. `docs/google-apps-script-setup.md` — скрипты настройки таблицы.
+4. `docs/html-preview.md` — как собрать просмотр в браузере.
+5. `docs/google-sheets-mvp.md` — как будет устроена первая Google Таблица.
+6. `docs/google-sheet-launch-checklist.md` — чек-лист запуска закрытой таблицы.
+7. `docs/google-apps-script-setup.md` — скрипты настройки таблицы.
 
 ## Что уже можно оценить без сборки
 
@@ -37,6 +38,22 @@ templates/
 
 Реальные внутренние телефоны, ФИО, закрытые условия и клиентские данные в публичный репозиторий не добавляются.
 
+## Как посмотреть в браузере
+
+Если работа идёт локально:
+
+```bash
+make html-preview
+```
+
+Ожидаемый файл:
+
+```text
+build/html-preview/index.html
+```
+
+Этот вариант удобен для быстрого просмотра CSV-структуры без Excel и Google Таблицы.
+
 ## Как посмотреть промежуточный XLSX
 
 Если работа идёт локально:
@@ -52,7 +69,7 @@ make preflight
 build/baza-knowledge-mvp.xlsx
 ```
 
-Если сборка идёт через GitHub Actions, файл нужно искать в артефактах workflow:
+Если сборка идёт через GitHub Actions, HTML-превью и XLSX нужно искать в артефактах workflow:
 
 ```text
 Actions -> Validate data files -> Artifacts -> baza-build-artifacts
@@ -88,7 +105,7 @@ scripts/google-apps-script/menu.gs
 
 ## Ближайший практический шаг
 
-Собрать XLSX или закрытую Google Таблицу, открыть её глазами и проверить:
+Собрать HTML-превью, XLSX или закрытую Google Таблицу, открыть её глазами и проверить:
 
 - понятны ли листы;
 - удобно ли искать контакты;
