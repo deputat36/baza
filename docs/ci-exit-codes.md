@@ -46,6 +46,10 @@
 
 Должен завершаться успешно, если можно собрать план выпадающих списков Google Таблицы.
 
+`python scripts/tools/build_google_sheet_formatting_plan.py`
+
+Должен завершаться успешно, если можно собрать план оформления и условного форматирования Google Таблицы.
+
 `python scripts/tools/build_preflight_summary.py`
 
 Должен завершаться успешно, если можно собрать сводку preflight-артефактов.
@@ -69,6 +73,10 @@
 `build/google-sheet-validation-plan.md` и `build/google-sheet-validation-plan.csv`
 
 Показывают справочники и значения для выпадающих списков.
+
+`build/google-sheet-formatting-plan.md` и `build/google-sheet-formatting-plan.csv`
+
+Показывают правила оформления, закрепления строк, фильтров и условного форматирования.
 
 `build/import-plan.md` и `build/import-plan.csv`
 
