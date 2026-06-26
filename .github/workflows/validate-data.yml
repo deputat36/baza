@@ -34,5 +34,14 @@ jobs:
       - name: Build XLSX preview
         run: python scripts/tools/build_workbook_from_csv.py
 
+      - name: Build data report
+        run: python scripts/tools/build_data_report.py
+
       - name: Inventory files
         run: python scripts/tools/list_project_files.py
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: baza-build-artifacts
+          path: build/
