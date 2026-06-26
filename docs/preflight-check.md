@@ -20,6 +20,7 @@ python scripts/tools/validate_workbook_sources.py
 python scripts/tools/privacy_scan.py
 python scripts/tools/build_workbook_from_csv.py
 python scripts/tools/build_data_report.py
+python scripts/tools/build_source_coverage_report.py
 python scripts/tools/list_project_files.py
 ```
 
@@ -44,6 +45,7 @@ python scripts/tools/privacy_scan.py --strict
 - Потенциально рискованные данные.
 - Сборка XLSX.
 - Технический отчёт по данным.
+- Отчёт покрытия CSV-источников XLSX-сборкой.
 - Инвентаризация файлов.
 
 ## Что блокирует проверку
@@ -54,10 +56,13 @@ python scripts/tools/privacy_scan.py --strict
 
 `privacy_scan.py` по умолчанию печатает предупреждения и не блокирует процесс. В строгом режиме `--strict` он завершится с ошибкой при найденных рисках.
 
+`build_source_coverage_report.py` формирует диагностический отчёт и нужен для ручной проверки полноты XLSX-сборки.
+
 ## Что проверить вручную
 
 - Нет ли реальных рабочих контактов.
 - Нет ли данных клиентов.
 - Нет ли закрытых условий.
 - Все непроверенные записи имеют статус `CHECK` или `DRAFT`.
+- CSV вне XLSX действительно не нужны в рабочей книге.
 - Новые файлы описаны в рабочем журнале или документации.
