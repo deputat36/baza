@@ -23,6 +23,18 @@ pip install -r requirements.txt
 python scripts/tools/validate_csv_structure.py
 ```
 
+Если нужно получить только отчёт без ошибки завершения:
+
+```bash
+python scripts/tools/validate_csv_structure.py --warn-only
+```
+
+## Поведение в CI
+
+Без флага `--warn-only` скрипт завершится с кодом `1`, если найдёт структурные проблемы.
+
+Это нужно, чтобы GitHub Actions не пропускал повреждённые CSV-файлы.
+
 ## Что делать с замечаниями
 
 Если скрипт нашёл проблему:
