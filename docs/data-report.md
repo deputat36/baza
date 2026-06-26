@@ -31,6 +31,18 @@ build/data-report.md
 
 ## Связанные отчёты
 
+Сводка по всем артефактам и ручному чек-листу:
+
+```bash
+make summary
+```
+
+Результат:
+
+```text
+build/preflight-summary.md
+```
+
 Для проверки того, какие CSV входят в XLSX:
 
 ```bash
