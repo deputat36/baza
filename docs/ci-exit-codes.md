@@ -34,6 +34,10 @@
 
 Должен завершаться успешно, если можно собрать отчёт по схемам CSV.
 
+`python scripts/tools/build_import_plan.py`
+
+Должен завершаться успешно, если можно собрать план импорта.
+
 `python scripts/tools/build_preflight_summary.py`
 
 Должен завершаться успешно, если можно собрать сводку preflight-артефактов.
@@ -49,6 +53,10 @@
 `build/preflight-summary.md`
 
 Показывает список артефактов и ручной чек-лист.
+
+`build/import-plan.md` и `build/import-plan.csv`
+
+Показывают порядок переноса CSV в закрытую Google Таблицу.
 
 `build/source-coverage-report.md`
 
