@@ -26,6 +26,7 @@ python scripts/tools/build_schema_report.py
 python scripts/tools/build_import_plan.py
 python scripts/tools/build_google_sheet_tabs_plan.py
 python scripts/tools/build_google_sheet_validation_plan.py
+python scripts/tools/build_google_sheet_formatting_plan.py
 python scripts/tools/build_preflight_summary.py
 python scripts/tools/list_project_files.py
 ```
@@ -57,6 +58,7 @@ python scripts/tools/privacy_scan.py --strict
 - План импорта в Google Таблицу.
 - План листов Google Таблицы.
 - План выпадающих списков Google Таблицы.
+- План оформления и условного форматирования Google Таблицы.
 - Preflight-сводка.
 - Инвентаризация файлов.
 
@@ -68,13 +70,14 @@ python scripts/tools/privacy_scan.py --strict
 
 `privacy_scan.py` по умолчанию печатает предупреждения и не блокирует процесс. В строгом режиме `--strict` он завершится с ошибкой при найденных рисках.
 
-`build_source_coverage_report.py`, `build_id_registry_report.py`, `build_schema_report.py`, `build_import_plan.py`, `build_google_sheet_tabs_plan.py`, `build_google_sheet_validation_plan.py` и `build_preflight_summary.py` формируют диагностические отчёты для ручной проверки.
+`build_source_coverage_report.py`, `build_id_registry_report.py`, `build_schema_report.py`, `build_import_plan.py`, `build_google_sheet_tabs_plan.py`, `build_google_sheet_validation_plan.py`, `build_google_sheet_formatting_plan.py` и `build_preflight_summary.py` формируют диагностические отчёты для ручной проверки.
 
 ## Что проверить вручную
 
 - Сначала открыть `build/preflight-summary.md`.
 - Проверить `build/google-sheet-tabs-plan.md` перед созданием листов.
 - Проверить `build/google-sheet-validation-plan.md` перед настройкой выпадающих списков.
+- Проверить `build/google-sheet-formatting-plan.md` перед настройкой цветов, фильтров и закрепления строк.
 - Проверить `build/import-plan.md` перед переносом CSV.
 - Нет ли реальных рабочих контактов.
 - Нет ли данных клиентов.
