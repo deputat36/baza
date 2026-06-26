@@ -6,9 +6,11 @@
 
 Файл нужен для быстрой проверки структуры перед переносом в закрытую Google Таблицу.
 
-## Скрипт
+## Скрипты
 
-`scripts/tools/build_workbook_from_csv.py`
+- `scripts/tools/workbook_config.py` — список листов, источников и путь результата.
+- `scripts/tools/validate_workbook_sources.py` — проверка обязательных CSV-источников.
+- `scripts/tools/build_workbook_from_csv.py` — сборка XLSX.
 
 ## Проверка источников
 
@@ -41,6 +43,17 @@ python scripts/tools/build_workbook_from_csv.py
 ## Результат
 
 `build/baza-knowledge-mvp.xlsx`
+
+## Изменение состава листов
+
+Состав листов и CSV-источников меняется в `scripts/tools/workbook_config.py`.
+
+После изменения нужно запустить:
+
+```bash
+make sources
+make xlsx
+```
 
 ## Ограничение
 
