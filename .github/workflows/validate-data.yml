@@ -28,6 +28,9 @@ jobs:
       - name: Validate CSV structure
         run: python scripts/tools/validate_csv_structure.py
 
+      - name: Validate workbook sources
+        run: python scripts/tools/validate_workbook_sources.py
+
       - name: Privacy scan warning report
         run: python scripts/tools/privacy_scan.py
 
