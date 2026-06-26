@@ -38,9 +38,10 @@ PHONE_PATTERN = re.compile(r"(?:\+7|8)\D{0,3}\d{3}\D{0,3}\d{3}\D{0,3}\d{2}\D{0,3
 EMAIL_PATTERN = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 
 ALLOW_FILES = {
-    "docs/security-and-privacy.md",
-    "docs/private-google-sheet-setup.md",
     "CONTRIBUTING.md",
+    "docs/private-google-sheet-setup.md",
+    "docs/security-and-privacy.md",
+    "scripts/tools/privacy_scan.py",
 }
 
 
