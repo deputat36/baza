@@ -23,6 +23,7 @@
 
 ## Запуск, проверка и тестирование
 
+- `docs/html-preview.md` — HTML-превью CSV-структуры для браузера.
 - `docs/import-to-google-sheets.md` — порядок импорта CSV.
 - `docs/import-manifest.md` — ручной манифест импорта.
 - `docs/generated-import-plan.md` — генерируемый план импорта.
@@ -101,6 +102,7 @@
 
 - `scripts/tools/workbook_config.py` — конфигурация XLSX-сборки.
 - `scripts/tools/build_workbook_from_csv.py` — сборка XLSX.
+- `scripts/tools/build_html_preview.py` — сборка HTML-превью.
 - `scripts/tools/validate_workbook_sources.py` — проверка источников XLSX.
 - `scripts/tools/build_data_report.py` — отчёт по CSV-файлам.
 - `scripts/tools/build_source_coverage_report.py` — отчёт покрытия CSV-источников.
@@ -128,8 +130,9 @@
 1. `README.md`
 2. `docs/start-here.md`
 3. `docs/intermediate-preview.md`
-4. `docs/project-index.md`
-5. `docs/google-sheets-mvp.md`
-6. `docs/private-google-sheet-setup.md`
-7. `docs/google-sheet-launch-checklist.md`
-8. `data/drafts/`
+4. `docs/html-preview.md`
+5. `docs/project-index.md`
+6. `docs/google-sheets-mvp.md`
+7. `docs/private-google-sheet-setup.md`
+8. `docs/google-sheet-launch-checklist.md`
+9. `data/drafts/`
