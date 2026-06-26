@@ -31,6 +31,9 @@ jobs:
       - name: Build HTML preview
         run: python scripts/tools/build_html_preview.py
 
+      - name: Validate HTML preview
+        run: python scripts/tools/validate_html_preview.py
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
