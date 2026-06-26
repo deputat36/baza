@@ -1,6 +1,6 @@
 PYTHON=python
 
-.PHONY: install validate validate-warn sources privacy privacy-strict xlsx report inventory preflight
+.PHONY: install validate validate-warn sources privacy privacy-strict xlsx report coverage inventory preflight
 
 install:
 	pip install -r requirements.txt
@@ -26,7 +26,10 @@ xlsx: sources
 report:
 	$(PYTHON) scripts/tools/build_data_report.py
 
+coverage:
+	$(PYTHON) scripts/tools/build_source_coverage_report.py
+
 inventory:
 	$(PYTHON) scripts/tools/list_project_files.py
 
-preflight: validate sources privacy xlsx report inventory
+preflight: validate sources privacy xlsx report coverage inventory
