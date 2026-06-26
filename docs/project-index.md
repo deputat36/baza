@@ -24,6 +24,7 @@
 ## Запуск, проверка и тестирование
 
 - `docs/html-preview.md` — HTML-превью CSV-структуры для браузера.
+- `docs/github-pages-preview.md` — публикация HTML-превью через GitHub Pages.
 - `docs/import-to-google-sheets.md` — порядок импорта CSV.
 - `docs/import-manifest.md` — ручной манифест импорта.
 - `docs/generated-import-plan.md` — генерируемый план импорта.
@@ -120,6 +121,7 @@
 - `scripts/google-apps-script/setup_baza_sheet.gs` — оформление закрытой Google Таблицы.
 - `scripts/google-apps-script/validate-baza-sheet.gs` — проверка закрытой Google Таблицы.
 - `scripts/google-apps-script/menu.gs` — меню `База знаний` в закрытой Google Таблице.
+- `.github/workflows/pages-preview.yml` — публикация HTML-превью через GitHub Pages.
 
 ## Будущее развитие
 
@@ -131,8 +133,9 @@
 2. `docs/start-here.md`
 3. `docs/intermediate-preview.md`
 4. `docs/html-preview.md`
-5. `docs/project-index.md`
-6. `docs/google-sheets-mvp.md`
-7. `docs/private-google-sheet-setup.md`
-8. `docs/google-sheet-launch-checklist.md`
-9. `data/drafts/`
+5. `docs/github-pages-preview.md`
+6. `docs/project-index.md`
+7. `docs/google-sheets-mvp.md`
+8. `docs/private-google-sheet-setup.md`
+9. `docs/google-sheet-launch-checklist.md`
+10. `data/drafts/`
