@@ -13,7 +13,9 @@ python scripts/tools/validate_csv_structure.py
 """
 
 from pathlib import Path
+import argparse
 import csv
+import sys
 from collections import defaultdict
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -71,21 +73,36 @@ def validate_file(path: Path):
     return problems
 
 
+def collect_csv_files():
+    files = []
+    for directory in CSV_DIRS:
+        if directory.exists():
+            files.extend(sorted(directory.rglob("*.csv")))
+    return files
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="Проверка структуры CSV-файлов проекта")
+    parser.add_argument(
+        "--warn-only",
+        action="store_true",
+        help="Печатать замечания, но завершаться с кодом 0",
+    )
+    return parser.parse_args()
+
+
 def main():
+    args = parse_args()
     all_problems = {}
 
-    for directory in CSV_DIRS:
-        if not directory.exists():
-            continue
-
-        for path in sorted(directory.glob("*.csv")):
-            problems = validate_file(path)
-            if problems:
-                all_problems[str(path.relative_to(ROOT))] = problems
+    for path in collect_csv_files():
+        problems = validate_file(path)
+        if problems:
+            all_problems[str(path.relative_to(ROOT))] = problems
 
     if not all_problems:
         print("CSV-проверка завершена: проблем не найдено.")
-        return
+        return 0
 
     print("CSV-проверка завершена: найдены замечания.\n")
     for file_path, problems in all_problems.items():
@@ -94,6 +111,8 @@ def main():
             print(f"  - {problem}")
         print()
 
+    return 0 if args.warn_only else 1
+
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
