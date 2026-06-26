@@ -40,6 +40,9 @@ jobs:
       - name: Build data report
         run: python scripts/tools/build_data_report.py
 
+      - name: Build source coverage report
+        run: python scripts/tools/build_source_coverage_report.py
+
       - name: Inventory files
         run: python scripts/tools/list_project_files.py
 
