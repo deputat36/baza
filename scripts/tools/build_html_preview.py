@@ -11,6 +11,7 @@ python scripts/tools/build_html_preview.py
 from pathlib import Path
 import csv
 import html
+import re
 from datetime import datetime
 
 try:
@@ -37,6 +38,11 @@ def read_csv(path: Path):
 
 def escape(value):
     return html.escape(str(value or ""))
+
+
+def slugify(value):
+    slug = re.sub(r"[^a-zA-Z0-9а-яА-ЯёЁ]+", "-", str(value).strip().lower())
+    return slug.strip("-") or "section"
 
 
 def iter_workbook_sources():
@@ -84,6 +90,16 @@ def collect_sources():
     return sources
 
 
+def get_source_meta(source):
+    try:
+        rows = read_csv(source["path"])
+        row_count = max(len(rows) - 1, 0)
+        column_count = len(rows[0]) if rows else 0
+        return rows, row_count, column_count, None
+    except Exception as exc:
+        return [], 0, 0, exc
+
+
 def render_table(rows):
     if not rows:
         return "<p class=\"muted\">Файл пустой.</p>"
@@ -113,20 +129,26 @@ def render_table(rows):
     return "".join(parts)
 
 
-def render_source_card(source):
+def render_source_card(source, index):
     relative = source["path"].relative_to(ROOT).as_posix()
-    try:
-        rows = read_csv(source["path"])
-        row_count = max(len(rows) - 1, 0)
-        column_count = len(rows[0]) if rows else 0
+    rows, row_count, column_count, error = get_source_meta(source)
+    section_id = f"csv-{index}-{slugify(source['title'])}"
+    search_text = " ".join([
+        source["group"],
+        source["title"],
+        relative,
+        " ".join(" ".join(row) for row in rows[:8]),
+    ]).lower()
+
+    if error:
+        table = f"<p class=\"error\">Не удалось прочитать файл: {escape(error)}</p>"
+        status = "ошибка чтения"
+    else:
         table = render_table(rows)
         status = f"{row_count} строк, {column_count} колонок"
-    except Exception as exc:
-        table = f"<p class=\"error\">Не удалось прочитать файл: {escape(exc)}</p>"
-        status = "ошибка чтения"
 
     return f"""
-    <section class=\"card\">
+    <section class=\"card\" id=\"{escape(section_id)}\" data-search=\"{escape(search_text)}\" data-group=\"{escape(source['group'])}\">
       <div class=\"card-head\">
         <div>
           <p class=\"eyebrow\">{escape(source['group'])}</p>
@@ -140,10 +162,27 @@ def render_source_card(source):
     """
 
 
+def render_nav(sources):
+    links = []
+    for index, source in enumerate(sources, start=1):
+        section_id = f"csv-{index}-{slugify(source['title'])}"
+        links.append(f"<a href=\"#{escape(section_id)}\">{escape(source['title'])}</a>")
+    return "\n".join(links)
+
+
 def build_html():
     sources = collect_sources()
     generated_at = datetime.now().strftime("%Y-%m-%d %H:%M")
-    cards = "\n".join(render_source_card(source) for source in sources)
+    total_rows = 0
+    total_columns = 0
+
+    for source in sources:
+        rows, row_count, column_count, _ = get_source_meta(source)
+        total_rows += row_count
+        total_columns += column_count
+
+    cards = "\n".join(render_source_card(source, index) for index, source in enumerate(sources, start=1))
+    nav = render_nav(sources)
 
     return f"""<!doctype html>
 <html lang=\"ru\">
@@ -162,6 +201,7 @@ def build_html():
       --accent-dark: #991b1b;
     }}
     * {{ box-sizing: border-box; }}
+    html {{ scroll-behavior: smooth; }}
     body {{
       margin: 0;
       font-family: Arial, sans-serif;
@@ -181,14 +221,55 @@ def build_html():
     h1 {{ margin: 0 0 8px; font-size: 28px; }}
     h2 {{ margin: 0; font-size: 20px; }}
     .summary {{ color: #cbd5e1; margin: 0; }}
+    .toolbar {{
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 18px;
+      padding: 16px;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }}
+    .stats {{ display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }}
+    .stat {{ background: #f3f4f6; border-radius: 999px; color: #334155; font-size: 13px; padding: 6px 10px; }}
+    .search-row {{ display: flex; gap: 10px; flex-wrap: wrap; }}
+    .search-row input {{
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      flex: 1 1 320px;
+      font-size: 15px;
+      padding: 10px 12px;
+    }}
+    .search-row button {{
+      background: #111827;
+      border: 0;
+      border-radius: 8px;
+      color: #ffffff;
+      cursor: pointer;
+      font-size: 14px;
+      padding: 10px 14px;
+    }}
+    .quick-nav {{ display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; }}
+    .quick-nav a {{
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: #334155;
+      font-size: 12px;
+      padding: 5px 9px;
+      text-decoration: none;
+    }}
     .grid {{ display: grid; gap: 18px; }}
     .card {{
       background: var(--panel);
       border: 1px solid var(--border);
       border-radius: 8px;
       padding: 18px;
+      scroll-margin-top: 150px;
       box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
     }}
+    .card.is-hidden {{ display: none; }}
     .card-head {{
       display: flex;
       align-items: flex-start;
@@ -244,6 +325,8 @@ def build_html():
       margin-bottom: 18px;
       padding: 14px 16px;
     }}
+    .empty-state {{ display: none; margin-top: 18px; }}
+    .empty-state.is-visible {{ display: block; }}
   </style>
 </head>
 <body>
@@ -255,10 +338,54 @@ def build_html():
     <div class=\"notice\">
       Это техническое превью публичной части проекта. Реальные внутренние контакты и клиентские данные должны храниться только в закрытой Google Таблице.
     </div>
-    <div class=\"grid\">
+    <div class=\"toolbar\">
+      <div class=\"stats\">
+        <span class=\"stat\">CSV-файлов: {len(sources)}</span>
+        <span class=\"stat\">Строк данных: {total_rows}</span>
+        <span class=\"stat\">Колонок суммарно: {total_columns}</span>
+        <span class=\"stat\" id=\"visibleCount\">Показано: {len(sources)}</span>
+      </div>
+      <div class=\"search-row\">
+        <input id=\"previewSearch\" type=\"search\" placeholder=\"Поиск по разделам, путям и первым строкам CSV\" autocomplete=\"off\">
+        <button id=\"resetSearch\" type=\"button\">Сбросить</button>
+      </div>
+    </div>
+    <nav class=\"quick-nav\" aria-label=\"Быстрые ссылки по CSV\">
+      {nav}
+    </nav>
+    <div class=\"grid\" id=\"cardsGrid\">
       {cards}
     </div>
+    <div class=\"notice empty-state\" id=\"emptyState\">По этому запросу карточки не найдены.</div>
   </main>
+  <script>
+    const searchInput = document.getElementById('previewSearch');
+    const resetButton = document.getElementById('resetSearch');
+    const cards = Array.from(document.querySelectorAll('.card'));
+    const visibleCount = document.getElementById('visibleCount');
+    const emptyState = document.getElementById('emptyState');
+
+    function applySearch() {{
+      const query = searchInput.value.trim().toLowerCase();
+      let visible = 0;
+
+      cards.forEach((card) => {{
+        const matches = !query || card.dataset.search.includes(query);
+        card.classList.toggle('is-hidden', !matches);
+        if (matches) visible += 1;
+      }});
+
+      visibleCount.textContent = `Показано: ${{visible}}`;
+      emptyState.classList.toggle('is-visible', visible === 0);
+    }}
+
+    searchInput.addEventListener('input', applySearch);
+    resetButton.addEventListener('click', () => {{
+      searchInput.value = '';
+      applySearch();
+      searchInput.focus();
+    }});
+  </script>
 </body>
 </html>
 """
