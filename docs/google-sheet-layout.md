@@ -9,6 +9,8 @@ build/google-sheet-tabs-plan.md
 build/google-sheet-tabs-plan.csv
 build/google-sheet-validation-plan.md
 build/google-sheet-validation-plan.csv
+build/google-sheet-formatting-plan.md
+build/google-sheet-formatting-plan.csv
 ```
 
 Создать их можно командами:
@@ -16,9 +18,10 @@ build/google-sheet-validation-plan.csv
 ```bash
 make tabs-plan
 make validation-plan
+make formatting-plan
 ```
 
-Планы строятся по `scripts/tools/workbook_config.py` и справочникам из `data/dictionaries`, поэтому совпадают с XLSX-сборкой, планом импорта и выпадающими списками.
+Планы строятся по `scripts/tools/workbook_config.py` и справочникам из `data/dictionaries`, поэтому совпадают с XLSX-сборкой, планом импорта, выпадающими списками и правилами оформления.
 
 ## Лист 1. Главная
 
@@ -127,3 +130,9 @@ make validation-plan
 ## Правило интерфейса
 
 Для сотрудников таблица должна быть простой. Технические поля можно скрывать, если они мешают работе.
+
+## Правило оформления
+
+Перед ручной настройкой цветов, закрепления строк, фильтров и условного форматирования нужно открыть `build/google-sheet-formatting-plan.md`.
+
+Этот файл задаёт единые правила для статусов, приоритетов и базового оформления листов.
