@@ -31,6 +31,7 @@
 - `docs/workbook-config.md` — конфигурация XLSX-сборки.
 - `docs/workbook-sources-validation.md` — проверка источников XLSX.
 - `docs/source-coverage-report.md` — покрытие CSV-файлов XLSX-сборкой.
+- `docs/id-registry.md` — реестр ID и возможные дубли.
 - `docs/privacy-scan.md` — проверка публичной безопасности.
 - `docs/preflight-check.md` — единая проверка перед публикацией.
 - `docs/ci-exit-codes.md` — коды завершения проверок.
@@ -91,6 +92,7 @@
 - `scripts/tools/validate_workbook_sources.py` — проверка источников XLSX.
 - `scripts/tools/build_data_report.py` — отчёт по CSV-файлам.
 - `scripts/tools/build_source_coverage_report.py` — отчёт покрытия CSV-источников.
+- `scripts/tools/build_id_registry_report.py` — реестр ID.
 - `scripts/tools/validate_csv_structure.py` — проверка CSV.
 - `scripts/tools/privacy_scan.py` — проверка публичной безопасности.
 - `scripts/tools/list_project_files.py` — инвентаризация файлов.
