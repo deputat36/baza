@@ -19,7 +19,7 @@
 - `docs/mvp-release-plan.md` — план первого запуска.
 - `docs/repository-review.md` — обзор текущего состояния.
 
-## Запуск и тестирование
+## Запуск, проверка и тестирование
 
 - `docs/import-to-google-sheets.md` — порядок импорта CSV.
 - `docs/google-sheet-launch-checklist.md` — чек-лист запуска таблицы.
@@ -27,6 +27,13 @@
 - `docs/office-demo-script.md` — сценарий демонстрации на планёрке.
 - `docs/weekly-maintenance-regulation.md` — еженедельное обслуживание базы.
 - `docs/data-normalization-plan.md` — нормализация данных перед импортом.
+- `docs/csv-validation.md` — проверка структуры CSV.
+- `docs/privacy-scan.md` — проверка публичной безопасности.
+- `docs/preflight-check.md` — единая проверка перед публикацией.
+- `docs/ci-exit-codes.md` — коды завершения проверок.
+- `docs/github-actions-validation.md` — автоматическая проверка в GitHub Actions.
+- `docs/github-actions-artifacts.md` — артефакты GitHub Actions.
+- `docs/data-report.md` — технический отчёт по CSV-файлам.
 
 ## Правила и безопасность
 
@@ -73,6 +80,14 @@
 - `data/dictionaries/priorities.csv` — приоритеты.
 - `data/dictionaries/categories-core.csv` — категории.
 - `data/dictionaries/search-synonyms.csv` — поисковые синонимы.
+
+## Инструменты
+
+- `scripts/tools/build_workbook_from_csv.py` — сборка XLSX.
+- `scripts/tools/build_data_report.py` — отчёт по CSV-файлам.
+- `scripts/tools/validate_csv_structure.py` — проверка CSV.
+- `scripts/tools/privacy_scan.py` — проверка публичной безопасности.
+- `scripts/tools/list_project_files.py` — инвентаризация файлов.
 
 ## Будущее развитие
 
