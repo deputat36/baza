@@ -28,6 +28,7 @@
 - `docs/weekly-maintenance-regulation.md` — еженедельное обслуживание базы.
 - `docs/data-normalization-plan.md` — нормализация данных перед импортом.
 - `docs/csv-validation.md` — проверка структуры CSV.
+- `docs/workbook-config.md` — конфигурация XLSX-сборки.
 - `docs/workbook-sources-validation.md` — проверка источников XLSX.
 - `docs/privacy-scan.md` — проверка публичной безопасности.
 - `docs/preflight-check.md` — единая проверка перед публикацией.
@@ -84,6 +85,7 @@
 
 ## Инструменты
 
+- `scripts/tools/workbook_config.py` — конфигурация XLSX-сборки.
 - `scripts/tools/build_workbook_from_csv.py` — сборка XLSX.
 - `scripts/tools/validate_workbook_sources.py` — проверка источников XLSX.
 - `scripts/tools/build_data_report.py` — отчёт по CSV-файлам.
