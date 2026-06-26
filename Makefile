@@ -20,7 +20,7 @@ privacy:
 privacy-strict:
 	$(PYTHON) scripts/tools/privacy_scan.py --strict
 
-xlsx:
+xlsx: sources
 	$(PYTHON) scripts/tools/build_workbook_from_csv.py
 
 report:
