@@ -24,6 +24,7 @@
 - `docs/import-to-google-sheets.md` — порядок импорта CSV.
 - `docs/import-manifest.md` — ручной манифест импорта.
 - `docs/generated-import-plan.md` — генерируемый план импорта.
+- `docs/generated-google-sheet-tabs-plan.md` — генерируемый план листов Google Таблицы.
 - `docs/google-sheet-launch-checklist.md` — чек-лист запуска таблицы.
 - `docs/first-user-test.md` — сценарий первого теста.
 - `docs/office-demo-script.md` — сценарий демонстрации на планёрке.
@@ -99,6 +100,7 @@
 - `scripts/tools/build_id_registry_report.py` — реестр ID.
 - `scripts/tools/build_schema_report.py` — отчёт по схемам CSV.
 - `scripts/tools/build_import_plan.py` — план импорта в Google Таблицу.
+- `scripts/tools/build_google_sheet_tabs_plan.py` — план листов Google Таблицы.
 - `scripts/tools/build_preflight_summary.py` — preflight-сводка.
 - `scripts/tools/validate_csv_structure.py` — проверка CSV.
 - `scripts/tools/privacy_scan.py` — проверка публичной безопасности.
