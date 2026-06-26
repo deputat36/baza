@@ -58,6 +58,9 @@ jobs:
       - name: Build Google Sheet validation plan
         run: python scripts/tools/build_google_sheet_validation_plan.py
 
+      - name: Build Google Sheet formatting plan
+        run: python scripts/tools/build_google_sheet_formatting_plan.py
+
       - name: Build preflight summary
         run: python scripts/tools/build_preflight_summary.py
 
