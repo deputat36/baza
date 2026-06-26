@@ -39,17 +39,32 @@ def escape(value):
     return html.escape(str(value or ""))
 
 
+def iter_workbook_sources():
+    for sheet in SHEETS:
+        if isinstance(sheet, dict):
+            title = sheet.get("title") or sheet.get("name") or "Без названия"
+            raw_sources = sheet.get("sources") or sheet.get("source") or []
+        else:
+            title = sheet[0]
+            raw_sources = sheet[1]
+
+        if isinstance(raw_sources, (str, Path)):
+            raw_sources = [raw_sources]
+
+        for source in raw_sources:
+            yield title, ROOT / source
+
+
 def collect_sources():
     sources = []
     used_paths = set()
 
-    for sheet in SHEETS:
-        source_path = ROOT / sheet["source"]
+    for sheet_title, source_path in iter_workbook_sources():
         if source_path.exists():
             sources.append({
-                "title": sheet["title"],
+                "title": f"{sheet_title}: {source_path.stem}",
                 "path": source_path,
-                "group": "XLSX-листы",
+                "group": "XLSX-источники",
             })
             used_paths.add(source_path.resolve())
 
