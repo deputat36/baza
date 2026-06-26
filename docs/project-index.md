@@ -16,6 +16,7 @@
 - `docs/google-sheets-mvp.md` — MVP в Google Таблице.
 - `docs/google-sheet-layout.md` — макет листов.
 - `docs/private-google-sheet-setup.md` — настройка закрытой таблицы.
+- `docs/google-apps-script-setup.md` — настройка закрытой таблицы через Apps Script.
 - `docs/mvp-release-plan.md` — план первого запуска.
 - `docs/repository-review.md` — обзор текущего состояния.
 
@@ -109,6 +110,8 @@
 - `scripts/tools/validate_csv_structure.py` — проверка CSV.
 - `scripts/tools/privacy_scan.py` — проверка публичной безопасности.
 - `scripts/tools/list_project_files.py` — инвентаризация файлов.
+- `scripts/google-apps-script/setup-baza.gs` — базовая настройка закрытой Google Таблицы.
+- `scripts/google-apps-script/setup_baza_sheet.gs` — оформление закрытой Google Таблицы.
 
 ## Будущее развитие
 
