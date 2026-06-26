@@ -1,0 +1,89 @@
+# Индекс проекта
+
+## Назначение
+
+Этот файл помогает быстро понять, где что находится в репозитории.
+
+Репозиторий содержит безопасную публичную часть базы знаний: структуру, шаблоны, черновики и регламенты.
+
+Реальные телефоны, ФИО, внутренние контакты и закрытые условия должны храниться только в закрытой Google Таблице.
+
+## Главные документы
+
+- `README.md` — общее описание проекта.
+- `docs/concept.md` — концепция базы знаний.
+- `docs/structure.md` — сущности, категории и логика ID.
+- `docs/google-sheets-mvp.md` — MVP в Google Таблице.
+- `docs/google-sheet-layout.md` — макет листов.
+- `docs/private-google-sheet-setup.md` — настройка закрытой таблицы.
+- `docs/mvp-release-plan.md` — план первого запуска.
+- `docs/repository-review.md` — обзор текущего состояния.
+
+## Запуск и тестирование
+
+- `docs/import-to-google-sheets.md` — порядок импорта CSV.
+- `docs/google-sheet-launch-checklist.md` — чек-лист запуска таблицы.
+- `docs/first-user-test.md` — сценарий первого теста.
+- `docs/office-demo-script.md` — сценарий демонстрации на планёрке.
+- `docs/weekly-maintenance-regulation.md` — еженедельное обслуживание базы.
+- `docs/data-normalization-plan.md` — нормализация данных перед импортом.
+
+## Правила и безопасность
+
+- `docs/filling-rules.md` — правила заполнения.
+- `docs/data-quality-checklist.md` — чек-лист качества данных.
+- `docs/security-and-privacy.md` — безопасность и приватность.
+- `docs/google-forms-for-employees.md` — формы для предложений сотрудников.
+- `.gitignore` — защита от случайной публикации приватных файлов.
+
+## Шаблоны
+
+- `templates/contacts-template.csv` — контакты.
+- `templates/knowledge-template.csv` — база знаний.
+- `templates/situations-template.csv` — ситуации.
+- `templates/change-request-template.csv` — предложения изменений.
+- `templates/practice-note-template.csv` — практические заметки.
+
+## Черновики данных
+
+- `data/drafts/government-borisoglebsk.csv` — государственные органы.
+- `data/drafts/documents-real-estate.csv` — документы.
+- `data/drafts/situations-real-estate.csv` — типовые ситуации.
+- `data/drafts/banks-mortgage.csv` — банки и ипотека.
+- `data/drafts/notaries-structure.csv` — нотариусы.
+- `data/drafts/cadastral-engineers.csv` — кадастровые инженеры.
+- `data/drafts/evaluators.csv` — оценщики.
+- `data/drafts/jkh-borisoglebsk.csv` — ЖКХ.
+- `data/drafts/management-companies.csv` — управляющие компании.
+- `data/drafts/online-services.csv` — онлайн-сервисы.
+- `data/drafts/contractors.csv` — подрядчики.
+- `data/drafts/emergency-services.csv` — экстренные службы.
+- `data/drafts/document-templates.csv` — шаблоны документов.
+- `data/drafts/faq-real-estate.csv` — FAQ.
+- `data/drafts/new-buildings.csv` — новостройки.
+- `data/drafts/internal-office-roles-template.csv` — внутренние роли.
+- `data/drafts/training-checklists.csv` — обучение.
+- `data/drafts/common-mistakes.csv` — частые ошибки.
+- `data/drafts/user-scenarios.csv` — пользовательские сценарии.
+
+## Справочники
+
+- `data/dictionaries/object-types.csv` — типы объектов.
+- `data/dictionaries/statuses.csv` — статусы.
+- `data/dictionaries/priorities.csv` — приоритеты.
+- `data/dictionaries/categories-core.csv` — категории.
+- `data/dictionaries/search-synonyms.csv` — поисковые синонимы.
+
+## Будущее развитие
+
+- `crm-design/entities.md` — черновик сущностей будущего CRM-модуля.
+
+## Рекомендуемый порядок просмотра
+
+1. `README.md`
+2. `docs/intermediate-preview.md`
+3. `docs/project-index.md`
+4. `docs/google-sheets-mvp.md`
+5. `docs/private-google-sheet-setup.md`
+6. `docs/google-sheet-launch-checklist.md`
+7. `data/drafts/`
