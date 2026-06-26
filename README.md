@@ -21,6 +21,7 @@
 - `docs/repository-review.md` — обзор текущего состояния репозитория.
 - `docs/google-sheets-mvp.md` — как будет устроена первая Google Таблица.
 - `docs/import-manifest.md` — порядок импорта данных в рабочую таблицу.
+- `docs/html-preview.md` — как собрать HTML-превью для просмотра в браузере.
 - `docs/knowledge-base-metrics.md` — как оценивать пользу базы.
 - `docs/next-actions.md` — ближайшие действия.
 - `data/drafts/` — черновики данных для будущего импорта.
@@ -43,6 +44,7 @@ make sources
 Основные результаты сборки находятся в `build/`:
 
 - `baza-knowledge-mvp.xlsx` — промежуточная Excel-книга;
+- `html-preview/index.html` — статическое HTML-превью для браузера;
 - `data-report.md` — техническая сводка по CSV-файлам.
 
 В GitHub Actions эти файлы сохраняются как артефакт `baza-build-artifacts`.
