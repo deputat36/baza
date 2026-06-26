@@ -28,5 +28,11 @@ jobs:
       - name: Validate CSV structure
         run: python scripts/tools/validate_csv_structure.py
 
+      - name: Privacy scan
+        run: python scripts/tools/privacy_scan.py
+
       - name: Build XLSX preview
         run: python scripts/tools/build_workbook_from_csv.py
+
+      - name: Inventory files
+        run: python scripts/tools/list_project_files.py
