@@ -1,6 +1,6 @@
 PYTHON=python
 
-.PHONY: install validate validate-warn sources privacy privacy-strict xlsx report coverage ids schemas summary inventory preflight
+.PHONY: install validate validate-warn sources privacy privacy-strict xlsx report coverage ids schemas import-plan summary inventory preflight
 
 install:
 	pip install -r requirements.txt
@@ -35,10 +35,13 @@ ids:
 schemas:
 	$(PYTHON) scripts/tools/build_schema_report.py
 
+import-plan:
+	$(PYTHON) scripts/tools/build_import_plan.py
+
 summary:
 	$(PYTHON) scripts/tools/build_preflight_summary.py
 
 inventory:
 	$(PYTHON) scripts/tools/list_project_files.py
 
-preflight: validate sources privacy xlsx report coverage ids schemas summary inventory
+preflight: validate sources privacy xlsx report coverage ids schemas import-plan summary inventory
