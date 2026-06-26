@@ -21,6 +21,7 @@ python scripts/tools/privacy_scan.py
 python scripts/tools/build_workbook_from_csv.py
 python scripts/tools/build_data_report.py
 python scripts/tools/build_source_coverage_report.py
+python scripts/tools/build_id_registry_report.py
 python scripts/tools/list_project_files.py
 ```
 
@@ -46,6 +47,7 @@ python scripts/tools/privacy_scan.py --strict
 - Сборка XLSX.
 - Технический отчёт по данным.
 - Отчёт покрытия CSV-источников XLSX-сборкой.
+- Реестр ID и возможные дубли.
 - Инвентаризация файлов.
 
 ## Что блокирует проверку
@@ -56,7 +58,7 @@ python scripts/tools/privacy_scan.py --strict
 
 `privacy_scan.py` по умолчанию печатает предупреждения и не блокирует процесс. В строгом режиме `--strict` он завершится с ошибкой при найденных рисках.
 
-`build_source_coverage_report.py` формирует диагностический отчёт и нужен для ручной проверки полноты XLSX-сборки.
+`build_source_coverage_report.py` и `build_id_registry_report.py` формируют диагностические отчёты для ручной проверки.
 
 ## Что проверить вручную
 
@@ -65,4 +67,5 @@ python scripts/tools/privacy_scan.py --strict
 - Нет ли закрытых условий.
 - Все непроверенные записи имеют статус `CHECK` или `DRAFT`.
 - CSV вне XLSX действительно не нужны в рабочей книге.
+- Возможные дубли ID не являются ошибочными повторами.
 - Новые файлы описаны в рабочем журнале или документации.
