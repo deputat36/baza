@@ -43,6 +43,9 @@ jobs:
       - name: Build source coverage report
         run: python scripts/tools/build_source_coverage_report.py
 
+      - name: Build ID registry report
+        run: python scripts/tools/build_id_registry_report.py
+
       - name: Inventory files
         run: python scripts/tools/list_project_files.py
 
