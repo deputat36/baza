@@ -104,6 +104,7 @@
 - `scripts/tools/workbook_config.py` — конфигурация XLSX-сборки.
 - `scripts/tools/build_workbook_from_csv.py` — сборка XLSX.
 - `scripts/tools/build_html_preview.py` — сборка HTML-превью.
+- `scripts/tools/validate_html_preview.py` — smoke-проверка HTML-превью.
 - `scripts/tools/validate_workbook_sources.py` — проверка источников XLSX.
 - `scripts/tools/build_data_report.py` — отчёт по CSV-файлам.
 - `scripts/tools/build_source_coverage_report.py` — отчёт покрытия CSV-источников.
