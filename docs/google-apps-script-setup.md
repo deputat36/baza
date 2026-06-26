@@ -2,13 +2,22 @@
 
 ## Назначение
 
-В репозитории есть три безопасных шаблона Apps Script для закрытой Google Таблицы базы знаний.
+В репозитории есть четыре безопасных шаблона Apps Script для закрытой Google Таблицы базы знаний.
 
 Они не импортируют реальные рабочие контакты, не отправляют данные наружу и не содержат приватных данных.
 
+## Файлы
+
+```text
+scripts/google-apps-script/setup-baza.gs
+scripts/google-apps-script/setup_baza_sheet.gs
+scripts/google-apps-script/validate-baza-sheet.gs
+scripts/google-apps-script/menu.gs
+```
+
 ## Базовая настройка
 
-Основной файл:
+Файл:
 
 ```text
 scripts/google-apps-script/setup-baza.gs
@@ -16,7 +25,7 @@ scripts/google-apps-script/setup-baza.gs
 
 Он создаёт базовые листы, закрепляет первую строку, включает фильтры и добавляет стартовое содержание на лист `Главная`.
 
-Запускаемая функция:
+Функция:
 
 ```text
 setupBazaKnowledgeSheet
@@ -24,7 +33,7 @@ setupBazaKnowledgeSheet
 
 ## Оформление и выпадающие списки
 
-Дополнительный файл:
+Файл:
 
 ```text
 scripts/google-apps-script/setup_baza_sheet.gs
@@ -39,7 +48,7 @@ scripts/google-apps-script/setup_baza_sheet.gs
 - выпадающие списки для статусов и приоритетов;
 - условное форматирование для статусов и приоритетов.
 
-Запускаемая функция:
+Функция:
 
 ```text
 applyBazaSheetFormattingPlan
@@ -47,7 +56,7 @@ applyBazaSheetFormattingPlan
 
 ## Проверка данных
 
-Файл проверки:
+Файл:
 
 ```text
 scripts/google-apps-script/validate-baza-sheet.gs
@@ -63,24 +72,55 @@ scripts/google-apps-script/validate-baza-sheet.gs
 - недопустимые статусы;
 - недопустимые приоритеты.
 
-Запускаемая функция:
+Функция:
 
 ```text
 validateBazaKnowledgeSheet
 ```
 
-## Как использовать
+## Меню таблицы
+
+Файл:
+
+```text
+scripts/google-apps-script/menu.gs
+```
+
+Он добавляет в Google Таблицу меню `База знаний`.
+
+Пункты меню:
+
+- `1. Создать базовые листы`;
+- `2. Применить оформление`;
+- `3. Проверить данные`;
+- `Полная подготовка таблицы`.
+
+После добавления файла меню нужно обновить страницу Google Таблицы.
+
+## Рекомендуемый порядок использования
 
 1. Создать или открыть закрытую Google Таблицу.
 2. Открыть `Расширения -> Apps Script`.
-3. Скопировать код из `scripts/google-apps-script/setup-baza.gs`.
-4. Запустить `setupBazaKnowledgeSheet`.
-5. Скопировать код из `scripts/google-apps-script/setup_baza_sheet.gs`.
-6. Запустить `applyBazaSheetFormattingPlan`.
-7. Импортировать или вручную внести рабочие данные в закрытую таблицу.
-8. Скопировать код из `scripts/google-apps-script/validate-baza-sheet.gs`.
-9. Запустить `validateBazaKnowledgeSheet`.
-10. Открыть лист `Проверка данных` и исправить замечания.
+3. Создать четыре файла в проекте Apps Script.
+4. Скопировать код из файлов репозитория.
+5. Сохранить проект Apps Script.
+6. Запустить любую функцию один раз из редактора, чтобы выдать разрешения.
+7. Обновить страницу Google Таблицы.
+8. Открыть меню `База знаний`.
+9. Запустить `Полная подготовка таблицы`.
+10. Импортировать или вручную внести рабочие данные.
+11. Запустить `3. Проверить данные`.
+12. Открыть лист `Проверка данных` и исправить замечания.
+
+## Ручной порядок функций
+
+Если меню не используется, функции можно запускать вручную:
+
+```text
+setupBazaKnowledgeSheet
+applyBazaSheetFormattingPlan
+validateBazaKnowledgeSheet
+```
 
 ## Перед запуском
 
