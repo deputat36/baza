@@ -69,3 +69,23 @@ baza-build-artifacts/html-preview/index.html
 ```text
 Actions -> Validate data files -> Artifacts -> baza-build-artifacts
 ```
+
+## Где смотреть через GitHub Pages
+
+Для публикации HTML-превью добавлен workflow:
+
+```text
+.github/workflows/pages-preview.yml
+```
+
+Инструкция:
+
+```text
+docs/github-pages-preview.md
+```
+
+Если GitHub Pages включён с источником `GitHub Actions`, страницу можно опубликовать через:
+
+```text
+Actions -> Publish HTML preview -> Run workflow
+```
