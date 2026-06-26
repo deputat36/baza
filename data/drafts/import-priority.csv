@@ -1,0 +1,13 @@
+ID,Приоритет,Файл,Куда импортировать,Зачем нужен,Когда импортировать,Статус
+IMP-0001,1,data/dictionaries/object-types.csv,Справочники,Типы объектов,До всех данных,DRAFT
+IMP-0002,1,data/dictionaries/statuses.csv,Справочники,Единые статусы,До всех данных,DRAFT
+IMP-0003,1,data/dictionaries/categories-core.csv,Справочники,Категории,До всех данных,DRAFT
+IMP-0004,1,data/drafts/situations-real-estate.csv,Ситуации,Стартовые рабочие случаи,Первый импорт,DRAFT
+IMP-0005,1,data/drafts/documents-real-estate.csv,База знаний,Базовые документы,Первый импорт,DRAFT
+IMP-0006,1,data/drafts/government-borisoglebsk.csv,Контакты,Госорганы и МФЦ,Первый импорт,DRAFT
+IMP-0007,2,data/drafts/banks-mortgage.csv,Контакты,Ипотека и банки,После базовых разделов,DRAFT
+IMP-0008,2,data/drafts/faq-real-estate.csv,FAQ,Частые вопросы,После ситуаций,DRAFT
+IMP-0009,2,data/dictionaries/search-synonyms.csv,Синонимы,Улучшение поиска,После ситуаций,DRAFT
+IMP-0010,3,data/drafts/contractors.csv,Подрядчики,Проверенные исполнители,После первого теста,DRAFT
+IMP-0011,3,data/drafts/new-buildings.csv,Новостройки,Работа с новыми объектами,После проверки данных,DRAFT
+IMP-0012,3,data/drafts/training-checklists.csv,Обучение,Адаптация новичков,После настройки таблицы,DRAFT
