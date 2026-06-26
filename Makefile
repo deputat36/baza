@@ -1,6 +1,6 @@
 PYTHON=python
 
-.PHONY: install validate validate-warn privacy privacy-strict xlsx report inventory preflight
+.PHONY: install validate validate-warn sources privacy privacy-strict xlsx report inventory preflight
 
 install:
 	pip install -r requirements.txt
@@ -10,6 +10,9 @@ validate:
 
 validate-warn:
 	$(PYTHON) scripts/tools/validate_csv_structure.py --warn-only
+
+sources:
+	$(PYTHON) scripts/tools/validate_workbook_sources.py
 
 privacy:
 	$(PYTHON) scripts/tools/privacy_scan.py
@@ -26,4 +29,4 @@ report:
 inventory:
 	$(PYTHON) scripts/tools/list_project_files.py
 
-preflight: validate privacy xlsx report inventory
+preflight: validate sources privacy xlsx report inventory
