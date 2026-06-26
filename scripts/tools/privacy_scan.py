@@ -2,14 +2,17 @@
 Базовая проверка публичной безопасности репозитория.
 
 Скрипт ищет потенциально рискованные слова и шаблоны в текстовых файлах.
-Он не заменяет ручную проверку, но помогает не отправить в публичный репозиторий очевидно лишние данные.
+По умолчанию он работает как предупреждение. Для строгого режима используйте --strict.
 
 Запуск:
 python scripts/tools/privacy_scan.py
+python scripts/tools/privacy_scan.py --strict
 """
 
 from pathlib import Path
+import argparse
 import re
+import sys
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -39,6 +42,16 @@ ALLOW_FILES = {
     "docs/private-google-sheet-setup.md",
     "CONTRIBUTING.md",
 }
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="Проверка публичной безопасности проекта")
+    parser.add_argument(
+        "--strict",
+        action="store_true",
+        help="Завершаться с кодом 1, если найдены потенциальные риски",
+    )
+    return parser.parse_args()
 
 
 def should_skip(path: Path) -> bool:
@@ -76,6 +89,7 @@ def scan_file(path: Path):
 
 
 def main():
+    args = parse_args()
     problems = {}
 
     for path in ROOT.rglob("*"):
@@ -88,7 +102,7 @@ def main():
 
     if not problems:
         print("Проверка публичной безопасности завершена: явных замечаний нет.")
-        return
+        return 0
 
     print("Найдены потенциально рискованные места. Проверьте вручную.\n")
     for file_path, findings in problems.items():
@@ -97,6 +111,8 @@ def main():
             print(f"  - {finding}")
         print()
 
+    return 1 if args.strict else 0
+
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
