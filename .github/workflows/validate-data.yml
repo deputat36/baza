@@ -49,6 +49,9 @@ jobs:
       - name: Build schema report
         run: python scripts/tools/build_schema_report.py
 
+      - name: Build import plan
+        run: python scripts/tools/build_import_plan.py
+
       - name: Build preflight summary
         run: python scripts/tools/build_preflight_summary.py
 
