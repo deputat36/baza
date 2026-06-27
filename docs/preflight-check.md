@@ -32,6 +32,7 @@ python scripts/tools/build_google_sheet_tabs_plan.py
 python scripts/tools/build_google_sheet_validation_plan.py
 python scripts/tools/build_google_sheet_formatting_plan.py
 python scripts/tools/build_preflight_summary.py
+python scripts/tools/build_artifact_index.py
 python scripts/tools/list_project_files.py
 ```
 
@@ -68,6 +69,7 @@ python scripts/tools/privacy_scan.py --strict
 - План выпадающих списков Google Таблицы.
 - План оформления и условного форматирования Google Таблицы.
 - Preflight-сводка.
+- Стартовая страница артефактов.
 - Инвентаризация файлов.
 
 ## Что блокирует проверку
@@ -80,11 +82,12 @@ python scripts/tools/privacy_scan.py --strict
 
 `privacy_scan.py` по умолчанию печатает предупреждения и не блокирует процесс. В строгом режиме `--strict` он завершится с ошибкой при найденных рисках.
 
-`build_missing_values_report.py`, `build_launch_readiness_report.py`, `build_source_coverage_report.py`, `build_id_registry_report.py`, `build_schema_report.py`, `build_import_plan.py`, `build_google_sheet_tabs_plan.py`, `build_google_sheet_validation_plan.py`, `build_google_sheet_formatting_plan.py` и `build_preflight_summary.py` формируют диагностические отчёты для ручной проверки.
+`build_missing_values_report.py`, `build_launch_readiness_report.py`, `build_source_coverage_report.py`, `build_id_registry_report.py`, `build_schema_report.py`, `build_import_plan.py`, `build_google_sheet_tabs_plan.py`, `build_google_sheet_validation_plan.py`, `build_google_sheet_formatting_plan.py`, `build_preflight_summary.py` и `build_artifact_index.py` формируют диагностические отчёты для ручной проверки.
 
 ## Что проверить вручную
 
-- Сначала открыть `build/preflight-summary.md`.
+- Сначала открыть `build/index.html`.
+- Затем открыть `build/preflight-summary.md`.
 - Проверить `build/html-preview/index.html` в браузере.
 - Проверить `build/launch-readiness-report.md`: какие листы READY, CHECK и DRAFT.
 - Проверить `build/missing-values-report.md`: пустые ID, статусы, приоритеты и файлы с большим числом пустых ячеек.
