@@ -1,6 +1,6 @@
 PYTHON=python
 
-.PHONY: install validate validate-warn sources privacy privacy-strict xlsx html-preview html-check report missing readiness coverage ids schemas import-plan tabs-plan validation-plan formatting-plan knowledge-index knowledge-check relationships summary artifact-index inventory preflight
+.PHONY: install validate validate-warn sources privacy privacy-strict xlsx html-preview html-check report missing readiness coverage ids schemas import-plan tabs-plan validation-plan formatting-plan knowledge-index knowledge-check relationships deal-hints summary artifact-index inventory preflight
 
 install:
 	pip install -r requirements.txt
@@ -68,6 +68,9 @@ knowledge-check: knowledge-index
 relationships: knowledge-check
 	$(PYTHON) scripts/tools/build_relationship_report.py
 
+deal-hints: knowledge-check
+	$(PYTHON) scripts/tools/build_deal_hint_rules.py
+
 summary:
 	$(PYTHON) scripts/tools/build_preflight_summary.py
 
@@ -77,4 +80,4 @@ artifact-index:
 inventory:
 	$(PYTHON) scripts/tools/list_project_files.py
 
-preflight: validate sources privacy xlsx html-check report missing readiness coverage ids schemas import-plan tabs-plan validation-plan formatting-plan relationships summary artifact-index inventory
+preflight: validate sources privacy xlsx html-check report missing readiness coverage ids schemas import-plan tabs-plan validation-plan formatting-plan relationships deal-hints summary artifact-index inventory
