@@ -49,6 +49,9 @@ jobs:
       - name: Build missing values report
         run: python scripts/tools/build_missing_values_report.py
 
+      - name: Build launch readiness report
+        run: python scripts/tools/build_launch_readiness_report.py
+
       - name: Build source coverage report
         run: python scripts/tools/build_source_coverage_report.py
 
