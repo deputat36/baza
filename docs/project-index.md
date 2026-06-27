@@ -23,6 +23,7 @@
 
 ## Запуск, проверка и тестирование
 
+- `docs/artifact-index.md` — стартовая страница артефактов сборки.
 - `docs/html-preview.md` — HTML-превью CSV-структуры для браузера.
 - `docs/github-pages-preview.md` — публикация HTML-превью через GitHub Pages.
 - `docs/import-to-google-sheets.md` — порядок импорта CSV.
@@ -106,6 +107,7 @@
 - `scripts/tools/workbook_config.py` — конфигурация XLSX-сборки.
 - `scripts/tools/build_workbook_from_csv.py` — сборка XLSX.
 - `scripts/tools/build_html_preview.py` — сборка HTML-превью.
+- `scripts/tools/build_artifact_index.py` — стартовая страница артефактов.
 - `scripts/tools/validate_html_preview.py` — smoke-проверка HTML-превью.
 - `scripts/tools/validate_workbook_sources.py` — проверка источников XLSX.
 - `scripts/tools/build_data_report.py` — отчёт по CSV-файлам.
@@ -137,10 +139,11 @@
 1. `README.md`
 2. `docs/start-here.md`
 3. `docs/intermediate-preview.md`
-4. `docs/html-preview.md`
-5. `docs/github-pages-preview.md`
-6. `docs/project-index.md`
-7. `docs/google-sheets-mvp.md`
-8. `docs/private-google-sheet-setup.md`
-9. `docs/google-sheet-launch-checklist.md`
-10. `data/drafts/`
+4. `docs/artifact-index.md`
+5. `docs/html-preview.md`
+6. `docs/github-pages-preview.md`
+7. `docs/project-index.md`
+8. `docs/google-sheets-mvp.md`
+9. `docs/private-google-sheet-setup.md`
+10. `docs/google-sheet-launch-checklist.md`
+11. `data/drafts/`
