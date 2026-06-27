@@ -15,6 +15,7 @@ import csv
 import json
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Any
 
 try:
     from workbook_config import ROOT, BUILD_DIR, SHEETS
@@ -55,39 +56,55 @@ def read_csv(path: Path):
         return list(csv.DictReader(file))
 
 
-def first_present(row: dict[str, str], columns: list[str]) -> str:
+def clean(value: Any) -> str:
+    if value is None:
+        return ""
+    if isinstance(value, list):
+        return " ".join(clean(item) for item in value if clean(item)).strip()
+    return str(value).strip()
+
+
+def first_present(row: dict[str, Any], columns: list[str]) -> str:
     for column in columns:
-        value = (row.get(column) or "").strip()
+        value = clean(row.get(column))
         if value:
             return value
     return ""
 
 
-def split_ids(value: str) -> list[str]:
-    if not value:
+def split_ids(value: Any) -> list[str]:
+    text = clean(value)
+    if not text:
         return []
-    normalized = value.replace(",", ";")
+    normalized = text.replace(",", ";")
     return [part.strip() for part in normalized.split(";") if part.strip()]
 
 
-def related_fields(row: dict[str, str]) -> dict[str, list[str]]:
+def related_fields(row: dict[str, Any]) -> dict[str, list[str]]:
     result = {}
     for key, value in row.items():
-        if key.startswith("Связанные"):
-            ids = split_ids(value or "")
+        if key and str(key).startswith("Связанные"):
+            ids = split_ids(value)
             if ids:
-                result[key] = ids
+                result[str(key)] = ids
     return result
 
 
-def compact_row(row: dict[str, str]) -> dict[str, str]:
-    return {key: value for key, value in row.items() if (value or "").strip()}
+def compact_row(row: dict[str, Any]) -> dict[str, str]:
+    result = {}
+    for key, value in row.items():
+        if key is None:
+            continue
+        text = clean(value)
+        if text:
+            result[str(key)] = text
+    return result
 
 
-def build_search_text(row: dict[str, str]) -> str:
+def build_search_text(row: dict[str, Any]) -> str:
     values = []
     for value in row.values():
-        text = (value or "").strip()
+        text = clean(value)
         if text:
             values.append(text)
     return " ".join(values)
@@ -113,7 +130,7 @@ def build_index():
             continue
 
         for row_number, row in enumerate(read_csv(path), start=2):
-            row_id = (row.get("ID") or "").strip()
+            row_id = clean(row.get("ID"))
             if not row_id:
                 continue
 
