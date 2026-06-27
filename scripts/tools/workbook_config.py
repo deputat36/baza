@@ -63,4 +63,10 @@ SHEETS = [
         "data/drafts/training-checklists.csv",
         "data/drafts/user-scenarios.csv",
     ]),
+    ("Интеграция", [
+        "data/dictionaries/deal-signals.csv",
+        "data/dictionaries/deal-audiences.csv",
+        "data/drafts/deal-hint-rules.csv",
+        "data/drafts/deal-hint-scenarios.csv",
+    ]),
 ]
