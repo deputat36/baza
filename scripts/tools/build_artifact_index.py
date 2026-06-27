@@ -55,6 +55,8 @@ ARTIFACTS = [
         ("Примеры payload CSV", "deal-hint-api-examples.csv", "Табличная версия примеров payload"),
         ("Отчёт аудиторий", "deal-audience-report.md", "Покрытие аудиторий правилами и сценариями"),
         ("Отчёт аудиторий CSV", "deal-audience-report.csv", "Табличная версия покрытия аудиторий"),
+        ("Отчёт видимости данных", "integration-data-visibility-report.md", "Что можно хранить публично, а что только в закрытом контуре"),
+        ("Отчёт видимости CSV", "integration-data-visibility-report.csv", "Табличная версия видимости данных"),
         ("Отчёт полей JSON", "integration-json-fields-report.md", "Проверка обязательных полей JSON-контрактов"),
         ("Отчёт полей JSON CSV", "integration-json-fields-report.csv", "Табличная версия проверки JSON-полей"),
         ("Отчёт контрактов интеграции", "integration-contract-report.md", "Проверка read-only контрактов будущей интеграции"),
