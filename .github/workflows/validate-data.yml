@@ -61,6 +61,9 @@ jobs:
       - name: Build schema report
         run: python scripts/tools/build_schema_report.py
 
+      - name: Build data freshness report
+        run: python scripts/tools/build_data_freshness_report.py
+
       - name: Build import plan
         run: python scripts/tools/build_import_plan.py
 
