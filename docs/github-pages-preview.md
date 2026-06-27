@@ -1,23 +1,40 @@
-# Публикация HTML-превью через GitHub Pages
+# Публикация артефактов через GitHub Pages
 
 ## Назначение
 
-Workflow `.github/workflows/pages-preview.yml` публикует HTML-превью базы знаний через GitHub Pages.
+Workflow `.github/workflows/pages-preview.yml` публикует артефакты сборки через GitHub Pages.
 
-Это нужно, чтобы структуру CSV можно было открыть в браузере без скачивания XLSX и без сборки закрытой Google Таблицы.
+Это нужно, чтобы структуру базы знаний, HTML-превью и диагностические отчёты можно было открыть в браузере без скачивания XLSX и без сборки закрытой Google Таблицы.
 
 ## Что публикуется
 
-Публикуется только результат генератора:
+Публикуется каталог:
 
 ```text
-build/html-preview/index.html
+build/
 ```
 
-Генератор:
+Главная страница:
+
+```text
+build/index.html
+```
+
+Она содержит ссылки на:
+
+- HTML-превью;
+- XLSX-книгу;
+- preflight-сводку;
+- отчёт готовности к запуску;
+- отчёт по незаполненным данным;
+- планы Google Таблицы;
+- отчёты по ID, схемам и покрытию CSV.
+
+## Основные генераторы
 
 ```text
 scripts/tools/build_html_preview.py
+scripts/tools/build_artifact_index.py
 ```
 
 ## Как включить
@@ -62,7 +79,7 @@ https://deputat36.github.io/baza/
 
 ## Если Pages не включён
 
-HTML-превью всё равно можно скачать из артефактов основного workflow:
+Артефакты всё равно можно скачать из основного workflow:
 
 ```text
 Actions -> Validate data files -> Artifacts -> baza-build-artifacts
@@ -71,5 +88,5 @@ Actions -> Validate data files -> Artifacts -> baza-build-artifacts
 И открыть локально:
 
 ```text
-html-preview/index.html
+index.html
 ```
