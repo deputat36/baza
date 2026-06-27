@@ -70,6 +70,7 @@ SHEETS = [
     ]),
     ("Актуальность", [
         "data/drafts/data-freshness-register.csv",
+        "data/drafts/section-ownership-matrix.csv",
     ]),
     ("Интеграция", [
         "data/dictionaries/deal-signals.csv",
