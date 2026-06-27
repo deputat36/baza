@@ -1,0 +1,7 @@
+ID,Контракт,Версия,Назначение,Источник,Артефакт,Документация,Генератор,Статус,Комментарий
+IC-0001,knowledge_index,v1,Единый read-only индекс записей базы знаний,scripts/tools/workbook_config.py,build/knowledge-index.json,docs/knowledge-index.md,scripts/tools/build_knowledge_index.py,CHECK,
+IC-0002,relationship_report,v1,Проверка связей между ID базы знаний,build/knowledge-index.json,build/relationship-report.md,docs/relationship-report.md,scripts/tools/build_relationship_report.py,CHECK,
+IC-0003,deal_signals,v1,Контролируемый словарь признаков сделки,data/dictionaries/deal-signals.csv,build/deal-signal-report.md,docs/deal-signals.md,scripts/tools/build_deal_signal_report.py,CHECK,
+IC-0004,deal_audiences,v1,Контролируемый словарь аудиторий подсказок,data/dictionaries/deal-audiences.csv,build/deal-audience-report.md,docs/deal-audiences.md,scripts/tools/build_deal_audience_report.py,CHECK,
+IC-0005,deal_hint_rules,v1,Правила показа подсказок по признакам сделки,data/drafts/deal-hint-rules.csv,build/deal-hint-rules.json,docs/deal-hint-rules.md,scripts/tools/build_deal_hint_rules.py,CHECK,
+IC-0006,deal_hint_preview,v1,Безопасная проверка срабатывания правил на сценариях,data/drafts/deal-hint-scenarios.csv,build/deal-hint-preview.json,docs/deal-hint-preview.md,scripts/tools/build_deal_hint_preview.py,CHECK,
