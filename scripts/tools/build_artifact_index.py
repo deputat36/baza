@@ -24,6 +24,8 @@ ARTIFACTS = [
     ("Главное", [
         ("HTML-превью", "html-preview/index.html", "Просмотр CSV-структуры в браузере"),
         ("XLSX-книга", OUTPUT_FILE.name, "Промежуточная Excel-книга"),
+        ("Управленческая сводка", "manager-dashboard.md", "Короткий dashboard для менеджера"),
+        ("Управленческая сводка CSV", "manager-dashboard.csv", "Табличная версия dashboard"),
         ("JSON-индекс знаний", "knowledge-index.json", "Read-only индекс для поиска и будущих интеграций"),
         ("Preflight-сводка", "preflight-summary.md", "Список артефактов и ручной чек-лист"),
     ]),
