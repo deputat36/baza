@@ -1,6 +1,6 @@
 PYTHON=python
 
-.PHONY: install validate validate-warn sources privacy privacy-strict xlsx html-preview html-check report missing readiness coverage ids schemas freshness change-requests role-navigation import-plan tabs-plan validation-plan formatting-plan knowledge-index knowledge-check relationships deal-hints deal-signals deal-hint-preview deal-audiences deal-hint-ui-map deal-hint-api-examples integration-json-fields integration-visibility integration-access integration-contracts manager-dashboard summary artifact-index inventory preflight
+.PHONY: install validate validate-warn sources privacy privacy-strict xlsx html-preview html-check report missing readiness coverage ids schemas freshness change-requests role-navigation import-plan tabs-plan validation-plan formatting-plan knowledge-index knowledge-check relationships deal-hints deal-signals deal-hint-preview deal-audiences deal-hint-ui-map deal-hint-api-examples integration-json-fields integration-visibility integration-access integration-contracts manager-dashboard office-launch summary artifact-index inventory preflight
 
 install:
 	pip install -r requirements.txt
@@ -110,6 +110,9 @@ integration-contracts:
 manager-dashboard: readiness freshness change-requests missing integration-access integration-contracts
 	$(PYTHON) scripts/tools/build_manager_dashboard.py
 
+office-launch: manager-dashboard role-navigation import-plan tabs-plan validation-plan formatting-plan
+	$(PYTHON) scripts/tools/build_office_launch_checklist_report.py
+
 summary:
 	$(PYTHON) scripts/tools/build_preflight_summary.py
 
@@ -119,4 +122,4 @@ artifact-index:
 inventory:
 	$(PYTHON) scripts/tools/list_project_files.py
 
-preflight: validate sources privacy xlsx html-check report missing readiness coverage ids schemas freshness change-requests role-navigation import-plan tabs-plan validation-plan formatting-plan relationships deal-hints deal-signals deal-hint-preview deal-audiences deal-hint-ui-map deal-hint-api-examples integration-json-fields integration-visibility integration-access integration-contracts manager-dashboard summary artifact-index inventory
+preflight: validate sources privacy xlsx html-check report missing readiness coverage ids schemas freshness change-requests role-navigation import-plan tabs-plan validation-plan formatting-plan relationships deal-hints deal-signals deal-hint-preview deal-audiences deal-hint-ui-map deal-hint-api-examples integration-json-fields integration-visibility integration-access integration-contracts manager-dashboard office-launch summary artifact-index inventory
