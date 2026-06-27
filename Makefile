@@ -110,7 +110,7 @@ integration-access:
 integration-contracts:
 	$(PYTHON) scripts/tools/build_integration_contract_report.py
 
-manager-dashboard: readiness freshness change-requests missing integration-access integration-contracts
+manager-dashboard: readiness freshness change-requests missing integration-access integration-contracts ownership
 	$(PYTHON) scripts/tools/build_manager_dashboard.py
 
 office-launch: manager-dashboard role-navigation ownership import-plan tabs-plan validation-plan formatting-plan
