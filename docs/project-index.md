@@ -23,6 +23,7 @@
 
 ## Запуск, проверка и тестирование
 
+- `docs/ui-preview.md` — как открыть пользовательский интерфейс через GitHub Pages или артефакт GitHub Actions.
 - `docs/artifact-index.md` — стартовая страница артефактов сборки.
 - `docs/html-preview.md` — HTML-превью CSV-структуры для браузера.
 - `docs/github-pages-preview.md` — публикация HTML-превью через GitHub Pages.
@@ -138,12 +139,13 @@
 
 1. `README.md`
 2. `docs/start-here.md`
-3. `docs/intermediate-preview.md`
-4. `docs/artifact-index.md`
-5. `docs/html-preview.md`
-6. `docs/github-pages-preview.md`
-7. `docs/project-index.md`
-8. `docs/google-sheets-mvp.md`
-9. `docs/private-google-sheet-setup.md`
-10. `docs/google-sheet-launch-checklist.md`
-11. `data/drafts/`
+3. `docs/ui-preview.md`
+4. `docs/intermediate-preview.md`
+5. `docs/artifact-index.md`
+6. `docs/html-preview.md`
+7. `docs/github-pages-preview.md`
+8. `docs/project-index.md`
+9. `docs/google-sheets-mvp.md`
+10. `docs/private-google-sheet-setup.md`
+11. `docs/google-sheet-launch-checklist.md`
+12. `data/drafts/`
