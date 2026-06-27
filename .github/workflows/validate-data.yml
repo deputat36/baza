@@ -85,6 +85,9 @@ jobs:
       - name: Build deal hint rules
         run: python scripts/tools/build_deal_hint_rules.py
 
+      - name: Build deal hint UI map
+        run: python scripts/tools/build_deal_hint_ui_map.py
+
       - name: Build deal signal report
         run: python scripts/tools/build_deal_signal_report.py
 
