@@ -65,6 +65,7 @@ SHEETS = [
     ("Обучение", [
         "data/drafts/training-checklists.csv",
         "data/drafts/user-scenarios.csv",
+        "data/drafts/role-navigation-map.csv",
     ]),
     ("Актуальность", [
         "data/drafts/data-freshness-register.csv",
