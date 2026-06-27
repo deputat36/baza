@@ -25,6 +25,7 @@ except ImportError:
     BUILD_DIR = ROOT / "build"
 
 RULES_FILE = ROOT / "data" / "drafts" / "deal-hint-rules.csv"
+SIGNALS_FILE = ROOT / "data" / "dictionaries" / "deal-signals.csv"
 KNOWLEDGE_INDEX_FILE = BUILD_DIR / "knowledge-index.json"
 OUTPUT_JSON = BUILD_DIR / "deal-hint-rules.json"
 REPORT_MD = BUILD_DIR / "deal-hint-rules-report.md"
@@ -64,6 +65,19 @@ def load_knowledge_ids() -> set[str]:
     return {clean(record.get("id")) for record in data.get("records", []) if clean(record.get("id"))}
 
 
+def load_signals() -> dict[str, dict[str, str]]:
+    if not SIGNALS_FILE.exists():
+        raise SystemExit(f"Файл сигналов не найден: {SIGNALS_FILE.relative_to(ROOT)}")
+    with SIGNALS_FILE.open("r", encoding="utf-8-sig", newline="") as file:
+        reader = csv.DictReader(file)
+        signals = {}
+        for row in reader:
+            signal = clean(row.get("Сигнал"))
+            if signal:
+                signals[signal] = {key: clean(value) for key, value in row.items() if key}
+        return signals
+
+
 def read_rules():
     if not RULES_FILE.exists():
         raise SystemExit(f"Файл правил не найден: {RULES_FILE.relative_to(ROOT)}")
@@ -75,10 +89,13 @@ def read_rules():
         return list(reader)
 
 
-def normalize_rule(row: dict[str, str], row_number: int):
+def normalize_rule(row: dict[str, str], row_number: int, signal_definitions: dict[str, dict[str, str]]):
+    signal = clean(row.get("Сигнал сделки"))
+    signal_definition = signal_definitions.get(signal, {})
     return {
         "id": clean(row.get("ID")),
-        "signal": clean(row.get("Сигнал сделки")),
+        "signal": signal,
+        "signal_type": signal_definition.get("Тип значения", ""),
         "value": clean(row.get("Значение")),
         "condition": clean(row.get("Условие")),
         "knowledge_ids": split_list(row.get("Связанные ID")),
@@ -92,7 +109,7 @@ def normalize_rule(row: dict[str, str], row_number: int):
     }
 
 
-def validate_rules(rules, knowledge_ids):
+def validate_rules(rules, knowledge_ids, signal_definitions):
     problems = []
     seen = set()
     for rule in rules:
@@ -108,6 +125,9 @@ def validate_rules(rules, knowledge_ids):
             if not rule.get(field):
                 problems.append(f"{rule_id}: пустое поле {field}")
 
+        if rule.get("signal") and rule["signal"] not in signal_definitions:
+            problems.append(f"{rule_id}: сигнал не найден в deal-signals.csv: {rule['signal']}")
+
         if not rule.get("knowledge_ids"):
             problems.append(f"{rule_id}: нет связанных ID")
 
@@ -117,13 +137,15 @@ def validate_rules(rules, knowledge_ids):
     return problems
 
 
-def write_outputs(rules, problems):
+def write_outputs(rules, problems, signal_definitions):
     data = {
         "schema_version": SCHEMA_VERSION,
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "source": RULES_FILE.relative_to(ROOT).as_posix(),
+        "signals_source": SIGNALS_FILE.relative_to(ROOT).as_posix(),
         "purpose": "Read-only draft rules for future deal-card knowledge hints.",
         "rules_count": len(rules),
+        "signals_count": len(signal_definitions),
         "problems_count": len(problems),
         "rules": rules,
     }
@@ -135,6 +157,7 @@ def write_outputs(rules, problems):
         "## Сводка",
         "",
         f"- Правил: {len(rules)}",
+        f"- Сигналов в словаре: {len(signal_definitions)}",
         f"- Ошибок: {len(problems)}",
         "",
         "## Ошибки",
@@ -145,20 +168,21 @@ def write_outputs(rules, problems):
     else:
         lines.append("Ошибок не найдено.")
 
-    lines.extend(["", "## Правила", "", "| ID | Сигнал | Значение | Связанные ID | Статус |", "|---|---|---|---|---|"])
+    lines.extend(["", "## Правила", "", "| ID | Сигнал | Тип | Значение | Связанные ID | Статус |", "|---|---|---|---|---|---|"])
     for rule in rules:
         lines.append(
-            f"| {rule['id']} | {rule['signal']} | {rule['value']} | {'; '.join(rule['knowledge_ids'])} | {rule['status']} |"
+            f"| {rule['id']} | {rule['signal']} | {rule['signal_type']} | {rule['value']} | {'; '.join(rule['knowledge_ids'])} | {rule['status']} |"
         )
     REPORT_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
     with REPORT_CSV.open("w", encoding="utf-8", newline="") as file:
         writer = csv.writer(file)
-        writer.writerow(["id", "signal", "value", "title", "knowledge_ids", "priority", "status", "row_number"])
+        writer.writerow(["id", "signal", "signal_type", "value", "title", "knowledge_ids", "priority", "status", "row_number"])
         for rule in rules:
             writer.writerow([
                 rule["id"],
                 rule["signal"],
+                rule["signal_type"],
                 rule["value"],
                 rule["title"],
                 "; ".join(rule["knowledge_ids"]),
@@ -171,9 +195,13 @@ def write_outputs(rules, problems):
 def main():
     BUILD_DIR.mkdir(exist_ok=True)
     knowledge_ids = load_knowledge_ids()
-    rules = [normalize_rule(row, row_number) for row_number, row in enumerate(read_rules(), start=2)]
-    problems = validate_rules(rules, knowledge_ids)
-    write_outputs(rules, problems)
+    signal_definitions = load_signals()
+    rules = [
+        normalize_rule(row, row_number, signal_definitions)
+        for row_number, row in enumerate(read_rules(), start=2)
+    ]
+    problems = validate_rules(rules, knowledge_ids, signal_definitions)
+    write_outputs(rules, problems, signal_definitions)
 
     print(f"Готово: {OUTPUT_JSON.relative_to(ROOT)}")
     print(f"Готово: {REPORT_MD.relative_to(ROOT)}")
