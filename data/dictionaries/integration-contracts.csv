@@ -5,3 +5,4 @@ IC-0003,deal_signals,v1,Контролируемый словарь призна
 IC-0004,deal_audiences,v1,Контролируемый словарь аудиторий подсказок,data/dictionaries/deal-audiences.csv,build/deal-audience-report.md,docs/deal-audiences.md,scripts/tools/build_deal_audience_report.py,CHECK,
 IC-0005,deal_hint_rules,v1,Правила показа подсказок по признакам сделки,data/drafts/deal-hint-rules.csv,build/deal-hint-rules.json,docs/deal-hint-rules.md,scripts/tools/build_deal_hint_rules.py,CHECK,
 IC-0006,deal_hint_preview,v1,Безопасная проверка срабатывания правил на сценариях,data/drafts/deal-hint-scenarios.csv,build/deal-hint-preview.json,docs/deal-hint-preview.md,scripts/tools/build_deal_hint_preview.py,CHECK,
+IC-0007,deal_hint_api_examples,v1,Примеры request и response для будущего интерфейса подсказок,data/drafts/deal-hint-scenarios.csv,build/deal-hint-api-examples.json,docs/deal-hint-api-examples.md,scripts/tools/build_deal_hint_api_examples.py,CHECK,
