@@ -73,5 +73,6 @@ SHEETS = [
         "data/drafts/deal-hint-rules.csv",
         "data/drafts/deal-hint-scenarios.csv",
         "data/drafts/deal-hint-ui-map.csv",
+        "data/drafts/integration-access-matrix.csv",
     ]),
 ]
