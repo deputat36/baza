@@ -2,8 +2,8 @@
 Управленческая сводка по базе знаний.
 
 Скрипт собирает короткий dashboard из уже созданных отчётов build/*.csv.
-Он должен запускаться после отчётов готовности, актуальности, очереди изменений
-и интеграционных проверок.
+Он должен запускаться после отчётов готовности, актуальности, очереди изменений,
+ответственности за разделы и интеграционных проверок.
 
 Результаты:
 - build/manager-dashboard.md
@@ -32,6 +32,7 @@ INPUTS = {
     "missing": BUILD_DIR / "missing-values-report.csv",
     "integration_access": BUILD_DIR / "integration-access-report.csv",
     "integration_contracts": BUILD_DIR / "integration-contract-report.csv",
+    "ownership": BUILD_DIR / "section-ownership-report.csv",
 }
 
 
@@ -110,6 +111,20 @@ def build_metrics():
     metric(metrics, "Актуальность", "Скоро проверить", due_soon, "WARN" if due_soon else "OK", "Срок проверки приближается")
     if never_checked or overdue or due_soon:
         actions.append("Назначить проверку разделов из `data-freshness-report.md`, начиная с контактов и юридических инструкций.")
+
+    ownership_rows = read_csv(INPUTS["ownership"])
+    ownership_counts = count_by(ownership_rows, "Статус")
+    ownership_ready = ownership_counts.get("READY", 0)
+    ownership_check = ownership_counts.get("CHECK", 0)
+    high_ownership_not_ready = [
+        row for row in ownership_rows
+        if clean(row.get("Критичность")) == "Высокая" and clean(row.get("Статус")).upper() != "READY"
+    ]
+    metric(metrics, "Ответственность", "READY зон", ownership_ready, "OK" if ownership_ready else "WARN", "Разделы с подтвержденным владельцем")
+    metric(metrics, "Ответственность", "CHECK зон", ownership_check, "WARN" if ownership_check else "OK", "Нужно подтвердить владельца и замещающего")
+    metric(metrics, "Ответственность", "Высокая критичность не READY", len(high_ownership_not_ready), "WARN" if high_ownership_not_ready else "OK", "Критичные зоны без подтверждения")
+    if high_ownership_not_ready:
+        actions.append("Назначить владельцев и замещающих по `section-ownership-report.md`, начиная с высокой критичности.")
 
     change_rows = read_csv(INPUTS["change_requests"])
     open_changes = [row for row in change_rows if clean(row.get("action_state")) == "OPEN"]
