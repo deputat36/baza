@@ -28,6 +28,8 @@ ARTIFACTS = [
         ("Управленческая сводка CSV", "manager-dashboard.csv", "Табличная версия dashboard"),
         ("Навигация по ролям", "role-navigation-report.md", "С чего начинать СПН, менеджеру, юристу, брокеру и администратору"),
         ("Навигация по ролям CSV", "role-navigation-report.csv", "Табличная версия ролевых маршрутов"),
+        ("Чек-лист запуска", "office-launch-checklist-report.md", "Что закрыть перед запуском базы в офисе"),
+        ("Чек-лист запуска CSV", "office-launch-checklist-report.csv", "Табличная версия чек-листа запуска"),
         ("JSON-индекс знаний", "knowledge-index.json", "Read-only индекс для поиска и будущих интеграций"),
         ("Preflight-сводка", "preflight-summary.md", "Список артефактов и ручной чек-лист"),
     ]),
