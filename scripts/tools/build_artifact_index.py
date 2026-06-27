@@ -57,6 +57,8 @@ ARTIFACTS = [
         ("Отчёт аудиторий CSV", "deal-audience-report.csv", "Табличная версия покрытия аудиторий"),
         ("Отчёт видимости данных", "integration-data-visibility-report.md", "Что можно хранить публично, а что только в закрытом контуре"),
         ("Отчёт видимости CSV", "integration-data-visibility-report.csv", "Табличная версия видимости данных"),
+        ("Отчёт доступа", "integration-access-report.md", "Матрица доступа ролей к публичным и закрытым данным"),
+        ("Отчёт доступа CSV", "integration-access-report.csv", "Табличная версия матрицы доступа"),
         ("Отчёт полей JSON", "integration-json-fields-report.md", "Проверка обязательных полей JSON-контрактов"),
         ("Отчёт полей JSON CSV", "integration-json-fields-report.csv", "Табличная версия проверки JSON-полей"),
         ("Отчёт контрактов интеграции", "integration-contract-report.md", "Проверка read-only контрактов будущей интеграции"),
