@@ -1,0 +1,11 @@
+ID,Правило подсказки,Зона интерфейса,Порядок,Обязательность,Заголовок в интерфейсе,Статус,Комментарий
+UIM-0001,DHR-0001,risk_banner,10,high,Проверьте детские доли и опеку,CHECK,
+UIM-0002,DHR-0002,mortgage_block,20,medium,Ипотечная сделка: проверьте условия и документы,CHECK,
+UIM-0003,DHR-0003,mortgage_block,30,medium,Маткапитал: проверьте ограничения и документы,CHECK,
+UIM-0004,DHR-0004,document_checklist,40,high,Запросите справку о зарегистрированных,CHECK,
+UIM-0005,DHR-0005,document_checklist,50,high,Проверьте правоустанавливающие документы,CHECK,
+UIM-0006,DHR-0006,document_checklist,60,high,Проверьте доверенность до сделки,CHECK,
+UIM-0007,DHR-0007,risk_banner,70,high,Перепланировка: нужен отдельный контроль,CHECK,
+UIM-0008,DHR-0008,transfer_checklist,80,medium,Передача объекта: подготовьте акт,CHECK,
+UIM-0009,DHR-0009,side_hint_panel,90,low,Вопрос клиента по налогу: дайте безопасную подсказку,CHECK,
+UIM-0010,DHR-0010,manager_control,100,medium,Проверка объекта перед рекламой,CHECK,
