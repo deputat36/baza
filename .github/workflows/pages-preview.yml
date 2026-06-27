@@ -28,6 +28,9 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
       - name: Build XLSX preview
         run: python scripts/tools/build_workbook_from_csv.py
 
