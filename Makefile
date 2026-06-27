@@ -1,6 +1,6 @@
 PYTHON=python
 
-.PHONY: install validate validate-warn sources privacy privacy-strict xlsx html-preview html-check report missing readiness coverage ids schemas freshness change-requests import-plan tabs-plan validation-plan formatting-plan knowledge-index knowledge-check relationships deal-hints deal-signals deal-hint-preview deal-audiences deal-hint-ui-map deal-hint-api-examples integration-json-fields integration-visibility integration-access integration-contracts manager-dashboard summary artifact-index inventory preflight
+.PHONY: install validate validate-warn sources privacy privacy-strict xlsx html-preview html-check report missing readiness coverage ids schemas freshness change-requests role-navigation import-plan tabs-plan validation-plan formatting-plan knowledge-index knowledge-check relationships deal-hints deal-signals deal-hint-preview deal-audiences deal-hint-ui-map deal-hint-api-examples integration-json-fields integration-visibility integration-access integration-contracts manager-dashboard summary artifact-index inventory preflight
 
 install:
 	pip install -r requirements.txt
@@ -52,6 +52,9 @@ freshness:
 
 change-requests:
 	$(PYTHON) scripts/tools/build_change_request_report.py
+
+role-navigation:
+	$(PYTHON) scripts/tools/build_role_navigation_report.py
 
 import-plan:
 	$(PYTHON) scripts/tools/build_import_plan.py
@@ -116,4 +119,4 @@ artifact-index:
 inventory:
 	$(PYTHON) scripts/tools/list_project_files.py
 
-preflight: validate sources privacy xlsx html-check report missing readiness coverage ids schemas freshness change-requests import-plan tabs-plan validation-plan formatting-plan relationships deal-hints deal-signals deal-hint-preview deal-audiences deal-hint-ui-map deal-hint-api-examples integration-json-fields integration-visibility integration-access integration-contracts manager-dashboard summary artifact-index inventory
+preflight: validate sources privacy xlsx html-check report missing readiness coverage ids schemas freshness change-requests role-navigation import-plan tabs-plan validation-plan formatting-plan relationships deal-hints deal-signals deal-hint-preview deal-audiences deal-hint-ui-map deal-hint-api-examples integration-json-fields integration-visibility integration-access integration-contracts manager-dashboard summary artifact-index inventory
