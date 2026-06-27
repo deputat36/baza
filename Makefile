@@ -1,6 +1,6 @@
 PYTHON=python
 
-.PHONY: install validate validate-warn sources privacy privacy-strict xlsx html-preview html-check report missing readiness coverage ids schemas import-plan tabs-plan validation-plan formatting-plan summary inventory preflight
+.PHONY: install validate validate-warn sources privacy privacy-strict xlsx html-preview html-check report missing readiness coverage ids schemas import-plan tabs-plan validation-plan formatting-plan summary artifact-index inventory preflight
 
 install:
 	pip install -r requirements.txt
@@ -62,7 +62,10 @@ formatting-plan:
 summary:
 	$(PYTHON) scripts/tools/build_preflight_summary.py
 
+artifact-index:
+	$(PYTHON) scripts/tools/build_artifact_index.py
+
 inventory:
 	$(PYTHON) scripts/tools/list_project_files.py
 
-preflight: validate sources privacy xlsx html-check report missing readiness coverage ids schemas import-plan tabs-plan validation-plan formatting-plan summary inventory
+preflight: validate sources privacy xlsx html-check report missing readiness coverage ids schemas import-plan tabs-plan validation-plan formatting-plan summary artifact-index inventory
