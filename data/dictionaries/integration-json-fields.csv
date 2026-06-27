@@ -1,0 +1,5 @@
+ID,Контракт,Артефакт,Обязательные поля,Статус,Комментарий
+IJF-0001,knowledge_index,build/knowledge-index.json,records,CHECK,Минимальное поле для чтения индекса знаний
+IJF-0002,deal_hint_rules,build/deal-hint-rules.json,schema_version; generated_at; rules_count; rules,CHECK,Правила будущих подсказок
+IJF-0003,deal_hint_preview,build/deal-hint-preview.json,schema_version; generated_at; scenarios_count; scenarios,CHECK,Предпросмотр срабатывания правил
+IJF-0004,deal_hint_api_examples,build/deal-hint-api-examples.json,schema_version; generated_at; examples_count; examples,CHECK,Примеры будущего request/response
