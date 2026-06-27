@@ -67,6 +67,9 @@ jobs:
       - name: Build change request report
         run: python scripts/tools/build_change_request_report.py
 
+      - name: Build role navigation report
+        run: python scripts/tools/build_role_navigation_report.py
+
       - name: Build import plan
         run: python scripts/tools/build_import_plan.py
 
