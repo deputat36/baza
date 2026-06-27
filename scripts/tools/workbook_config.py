@@ -18,6 +18,7 @@ SHEETS = [
         "data/dictionaries/priorities.csv",
         "data/dictionaries/categories-core.csv",
         "data/dictionaries/freshness-policies.csv",
+        "data/dictionaries/change-request-statuses.csv",
     ]),
     ("Контакты", [
         "templates/contacts-template.csv",
@@ -48,6 +49,7 @@ SHEETS = [
     ]),
     ("Предложения", [
         "templates/change-request-template.csv",
+        "data/drafts/change-request-queue.csv",
         "data/drafts/feedback-log-template.csv",
     ]),
     ("Синонимы", [
