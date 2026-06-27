@@ -10,6 +10,7 @@
 
 - `docs/future-navigator-compatibility.md` — принцип будущей связки с Навигатором сделок.
 - `docs/manager-dashboard.md` — описание управленческой сводки.
+- `docs/role-navigation.md` — описание навигации по ролям сотрудников.
 - `docs/data-freshness.md` — описание контроля актуальности данных.
 - `docs/change-request-queue.md` — описание очереди предложений и исправлений.
 - `docs/knowledge-index.md` — описание JSON-индекса знаний.
@@ -40,6 +41,7 @@
 - `data/dictionaries/integration-data-visibility.csv` — карта публичных и закрытых данных.
 - `data/drafts/data-freshness-register.csv` — реестр контроля актуальности разделов.
 - `data/drafts/change-request-queue.csv` — очередь предложений и исправлений.
+- `data/drafts/role-navigation-map.csv` — навигация по ролям сотрудников.
 - `data/drafts/deal-hint-rules.csv` — черновик правил, которые связывают признаки сделки с ID базы знаний.
 - `data/drafts/deal-hint-scenarios.csv` — безопасные тестовые сценарии без реальных сделок.
 - `data/drafts/deal-hint-ui-map.csv` — карта размещения правил подсказок по зонам будущего интерфейса.
@@ -48,6 +50,7 @@
 ## Скрипты
 
 - `scripts/tools/build_manager_dashboard.py` — собирает короткую управленческую сводку из детальных отчётов.
+- `scripts/tools/build_role_navigation_report.py` — собирает отчёт по навигации для ролей.
 - `scripts/tools/build_data_freshness_report.py` — собирает отчёт актуальности данных.
 - `scripts/tools/build_change_request_report.py` — собирает отчёт по очереди предложений и исправлений.
 - `scripts/tools/build_knowledge_index.py` — собирает `build/knowledge-index.json`.
@@ -68,6 +71,8 @@
 
 - `build/manager-dashboard.md`
 - `build/manager-dashboard.csv`
+- `build/role-navigation-report.md`
+- `build/role-navigation-report.csv`
 - `build/data-freshness-report.md`
 - `build/data-freshness-report.csv`
 - `build/change-request-report.md`
@@ -104,6 +109,7 @@
 
 ```bash
 make manager-dashboard
+make role-navigation
 make freshness
 make change-requests
 make knowledge-check
@@ -130,6 +136,7 @@ make preflight
 - иметь статус проверки;
 - иметь понятный срок повторной проверки;
 - иметь управленческую сводку рисков и ближайших действий;
+- иметь понятный маршрут просмотра для разных ролей сотрудников;
 - иметь контролируемый процесс предложений и исправлений;
 - ссылаться на связанные документы, контакты, инструкции и ситуации через стабильные ID;
 - попадать в правила подсказок, если она должна появляться при конкретном признаке сделки;
