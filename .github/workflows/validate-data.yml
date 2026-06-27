@@ -73,6 +73,9 @@ jobs:
       - name: Build Google Sheet formatting plan
         run: python scripts/tools/build_google_sheet_formatting_plan.py
 
+      - name: Build knowledge index
+        run: python scripts/tools/build_knowledge_index.py
+
       - name: Build preflight summary
         run: python scripts/tools/build_preflight_summary.py
 
