@@ -66,9 +66,11 @@ SHEETS = [
     ("Интеграция", [
         "data/dictionaries/deal-signals.csv",
         "data/dictionaries/deal-audiences.csv",
+        "data/dictionaries/deal-hint-ui-zones.csv",
         "data/dictionaries/integration-contracts.csv",
         "data/dictionaries/integration-json-fields.csv",
         "data/drafts/deal-hint-rules.csv",
         "data/drafts/deal-hint-scenarios.csv",
+        "data/drafts/deal-hint-ui-map.csv",
     ]),
 ]
