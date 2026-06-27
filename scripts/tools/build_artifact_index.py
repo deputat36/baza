@@ -36,6 +36,11 @@ ARTIFACTS = [
         ("Реестр ID", "id-registry.md", "ID, префиксы и возможные дубли"),
         ("Схемы CSV", "schema-report.md", "Заголовки и схемы CSV"),
     ]),
+    ("Связи и будущая интеграция", [
+        ("Отчёт по связям", "relationship-report.md", "Проверка связей между SIT, DOC, ORG, INS и другими ID"),
+        ("Отчёт по связям CSV", "relationship-report.csv", "Табличная версия связей и отсутствующих ID"),
+        ("JSON-индекс знаний", "knowledge-index.json", "Контракт чтения для будущих интерфейсов"),
+    ]),
     ("Google Таблица", [
         ("План листов", "google-sheet-tabs-plan.md", "Порядок листов закрытой Google Таблицы"),
         ("План листов CSV", "google-sheet-tabs-plan.csv", "Табличная версия плана листов"),
