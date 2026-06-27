@@ -67,6 +67,7 @@ SHEETS = [
         "data/dictionaries/deal-signals.csv",
         "data/dictionaries/deal-audiences.csv",
         "data/dictionaries/integration-contracts.csv",
+        "data/dictionaries/integration-json-fields.csv",
         "data/drafts/deal-hint-rules.csv",
         "data/drafts/deal-hint-scenarios.csv",
     ]),
