@@ -16,6 +16,7 @@
 - `docs/deal-audiences.md` — описание словаря аудиторий подсказок.
 - `docs/deal-audience-report.md` — описание отчёта по покрытию аудиторий.
 - `docs/deal-hint-api-examples.md` — описание безопасных примеров request/response для будущего интерфейса.
+- `docs/integration-json-fields.md` — описание обязательных верхнеуровневых полей JSON-контрактов.
 - `docs/integration-contracts.md` — описание read-only контрактов будущей интеграции.
 - `docs/integration-contract-report.md` — описание отчёта по готовности контрактов.
 - `docs/deal-hint-rules.md` — описание правил будущих подсказок сделки.
@@ -26,6 +27,7 @@
 - `data/dictionaries/deal-signals.csv` — словарь допустимых сигналов сделки.
 - `data/dictionaries/deal-audiences.csv` — словарь допустимых аудиторий подсказок.
 - `data/dictionaries/integration-contracts.csv` — реестр read-only контрактов будущей интеграции.
+- `data/dictionaries/integration-json-fields.csv` — минимальные обязательные поля JSON-контрактов.
 - `data/drafts/deal-hint-rules.csv` — черновик правил, которые связывают признаки сделки с ID базы знаний.
 - `data/drafts/deal-hint-scenarios.csv` — безопасные тестовые сценарии без реальных сделок.
 
@@ -39,6 +41,7 @@
 - `scripts/tools/build_deal_hint_preview.py` — применяет правила к безопасным тестовым сценариям.
 - `scripts/tools/build_deal_audience_report.py` — проверяет покрытие аудиторий правилами и сценариями.
 - `scripts/tools/build_deal_hint_api_examples.py` — собирает безопасные примеры request/response для будущего интерфейса.
+- `scripts/tools/validate_integration_json_fields.py` — проверяет обязательные поля JSON-контрактов.
 - `scripts/tools/build_integration_contract_report.py` — проверяет готовность контрактов будущей интеграции.
 
 ## Артефакты сборки
@@ -59,6 +62,8 @@
 - `build/deal-hint-api-examples.json`
 - `build/deal-hint-api-examples.md`
 - `build/deal-hint-api-examples.csv`
+- `build/integration-json-fields-report.md`
+- `build/integration-json-fields-report.csv`
 - `build/integration-contract-report.md`
 - `build/integration-contract-report.csv`
 
@@ -72,6 +77,7 @@ make deal-signals
 make deal-hint-preview
 make deal-audiences
 make deal-hint-api-examples
+make integration-json-fields
 make integration-contracts
 make preflight
 ```
@@ -88,5 +94,6 @@ make preflight
 - использовать только сигналы из контролируемого словаря;
 - использовать только аудитории из контролируемого словаря;
 - иметь безопасный пример request/response, если она участвует в будущих подсказках;
+- сохранять минимальную стабильную структуру JSON-контрактов;
 - входить в явно описанные контракты интеграции, если она нужна будущему интерфейсу;
 - проходить проверку на безопасных тестовых сценариях.
