@@ -14,6 +14,7 @@ from workbook_config import BUILD_DIR, OUTPUT_FILE
 SUMMARY_FILE = BUILD_DIR / "preflight-summary.md"
 
 EXPECTED_ARTIFACTS = [
+    ("index.html", "Стартовая страница артефактов сборки"),
     (OUTPUT_FILE.name, "Промежуточная Excel-книга для просмотра структуры"),
     ("html-preview/index.html", "Статическое HTML-превью CSV-структуры"),
     ("launch-readiness-report.md", "Отчёт готовности разделов к запуску"),
@@ -35,6 +36,7 @@ EXPECTED_ARTIFACTS = [
 ]
 
 MANUAL_CHECKS = [
+    "Открыть `index.html` как стартовую страницу артефактов.",
     "Открыть XLSX и проверить список листов.",
     "Открыть `html-preview/index.html` и быстро просмотреть CSV-структуру в браузере.",
     "Проверить `launch-readiness-report.md`: какие листы READY, CHECK и DRAFT.",
