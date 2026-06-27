@@ -28,11 +28,50 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Build XLSX preview
+        run: python scripts/tools/build_workbook_from_csv.py
+
       - name: Build HTML preview
         run: python scripts/tools/build_html_preview.py
 
       - name: Validate HTML preview
         run: python scripts/tools/validate_html_preview.py
+
+      - name: Build data report
+        run: python scripts/tools/build_data_report.py
+
+      - name: Build missing values report
+        run: python scripts/tools/build_missing_values_report.py
+
+      - name: Build launch readiness report
+        run: python scripts/tools/build_launch_readiness_report.py
+
+      - name: Build source coverage report
+        run: python scripts/tools/build_source_coverage_report.py
+
+      - name: Build ID registry report
+        run: python scripts/tools/build_id_registry_report.py
+
+      - name: Build schema report
+        run: python scripts/tools/build_schema_report.py
+
+      - name: Build import plan
+        run: python scripts/tools/build_import_plan.py
+
+      - name: Build Google Sheet tabs plan
+        run: python scripts/tools/build_google_sheet_tabs_plan.py
+
+      - name: Build Google Sheet validation plan
+        run: python scripts/tools/build_google_sheet_validation_plan.py
+
+      - name: Build Google Sheet formatting plan
+        run: python scripts/tools/build_google_sheet_formatting_plan.py
+
+      - name: Build preflight summary
+        run: python scripts/tools/build_preflight_summary.py
+
+      - name: Build artifact index
+        run: python scripts/tools/build_artifact_index.py
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
@@ -40,7 +79,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build/html-preview
+          path: build
 
       - name: Deploy to GitHub Pages
         id: deployment
