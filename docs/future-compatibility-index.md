@@ -13,12 +13,15 @@
 - `docs/relationship-report.md` — описание отчёта по связям между ID.
 - `docs/deal-signals.md` — описание словаря сигналов сделки.
 - `docs/deal-signal-report.md` — описание отчёта по покрытию сигналов.
+- `docs/deal-audiences.md` — описание словаря аудиторий подсказок.
+- `docs/deal-audience-report.md` — описание отчёта по покрытию аудиторий.
 - `docs/deal-hint-rules.md` — описание правил будущих подсказок сделки.
 - `docs/deal-hint-preview.md` — описание предпросмотра подсказок на безопасных сценариях.
 
 ## Данные
 
 - `data/dictionaries/deal-signals.csv` — словарь допустимых сигналов сделки.
+- `data/dictionaries/deal-audiences.csv` — словарь допустимых аудиторий подсказок.
 - `data/drafts/deal-hint-rules.csv` — черновик правил, которые связывают признаки сделки с ID базы знаний.
 - `data/drafts/deal-hint-scenarios.csv` — безопасные тестовые сценарии без реальных сделок.
 
@@ -30,6 +33,7 @@
 - `scripts/tools/build_deal_hint_rules.py` — собирает JSON и отчёты по правилам подсказок.
 - `scripts/tools/build_deal_signal_report.py` — собирает отчёт по покрытию сигналов.
 - `scripts/tools/build_deal_hint_preview.py` — применяет правила к безопасным тестовым сценариям.
+- `scripts/tools/build_deal_audience_report.py` — проверяет покрытие аудиторий правилами и сценариями.
 
 ## Артефакты сборки
 
@@ -44,6 +48,8 @@
 - `build/deal-hint-preview.json`
 - `build/deal-hint-preview.md`
 - `build/deal-hint-preview.csv`
+- `build/deal-audience-report.md`
+- `build/deal-audience-report.csv`
 
 ## Команды
 
@@ -53,6 +59,7 @@ make relationships
 make deal-hints
 make deal-signals
 make deal-hint-preview
+make deal-audiences
 make preflight
 ```
 
@@ -66,4 +73,5 @@ make preflight
 - ссылаться на связанные документы, контакты, инструкции и ситуации через стабильные ID;
 - попадать в правила подсказок, если она должна появляться при конкретном признаке сделки;
 - использовать только сигналы из контролируемого словаря;
+- использовать только аудитории из контролируемого словаря;
 - проходить проверку на безопасных тестовых сценариях.
