@@ -26,6 +26,8 @@ ARTIFACTS = [
         ("XLSX-книга", OUTPUT_FILE.name, "Промежуточная Excel-книга"),
         ("Управленческая сводка", "manager-dashboard.md", "Короткий dashboard для менеджера"),
         ("Управленческая сводка CSV", "manager-dashboard.csv", "Табличная версия dashboard"),
+        ("Навигация по ролям", "role-navigation-report.md", "С чего начинать СПН, менеджеру, юристу, брокеру и администратору"),
+        ("Навигация по ролям CSV", "role-navigation-report.csv", "Табличная версия ролевых маршрутов"),
         ("JSON-индекс знаний", "knowledge-index.json", "Read-only индекс для поиска и будущих интеграций"),
         ("Preflight-сводка", "preflight-summary.md", "Список артефактов и ручной чек-лист"),
     ]),
