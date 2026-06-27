@@ -9,6 +9,7 @@
 ## Документы
 
 - `docs/future-navigator-compatibility.md` — принцип будущей связки с Навигатором сделок.
+- `docs/manager-dashboard.md` — описание управленческой сводки.
 - `docs/data-freshness.md` — описание контроля актуальности данных.
 - `docs/change-request-queue.md` — описание очереди предложений и исправлений.
 - `docs/knowledge-index.md` — описание JSON-индекса знаний.
@@ -46,6 +47,7 @@
 
 ## Скрипты
 
+- `scripts/tools/build_manager_dashboard.py` — собирает короткую управленческую сводку из детальных отчётов.
 - `scripts/tools/build_data_freshness_report.py` — собирает отчёт актуальности данных.
 - `scripts/tools/build_change_request_report.py` — собирает отчёт по очереди предложений и исправлений.
 - `scripts/tools/build_knowledge_index.py` — собирает `build/knowledge-index.json`.
@@ -64,6 +66,8 @@
 
 ## Артефакты сборки
 
+- `build/manager-dashboard.md`
+- `build/manager-dashboard.csv`
 - `build/data-freshness-report.md`
 - `build/data-freshness-report.csv`
 - `build/change-request-report.md`
@@ -99,6 +103,7 @@
 ## Команды
 
 ```bash
+make manager-dashboard
 make freshness
 make change-requests
 make knowledge-check
@@ -124,6 +129,7 @@ make preflight
 - иметь текст для поиска;
 - иметь статус проверки;
 - иметь понятный срок повторной проверки;
+- иметь управленческую сводку рисков и ближайших действий;
 - иметь контролируемый процесс предложений и исправлений;
 - ссылаться на связанные документы, контакты, инструкции и ситуации через стабильные ID;
 - попадать в правила подсказок, если она должна появляться при конкретном признаке сделки;
