@@ -88,6 +88,9 @@ jobs:
       - name: Build deal hint preview
         run: python scripts/tools/build_deal_hint_preview.py
 
+      - name: Build deal audience report
+        run: python scripts/tools/build_deal_audience_report.py
+
       - name: Build preflight summary
         run: python scripts/tools/build_preflight_summary.py
 
