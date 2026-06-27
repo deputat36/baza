@@ -1,0 +1,11 @@
+ID,Аудитория,Сценарий,С чего начать,Основные разделы,Артефакты,Следующее действие,Приоритет,Статус,Комментарий
+RNM-0001,СПН,Найти ответ по сделке,HTML-превью или будущая карточка подсказок,Ситуации; База знаний; Контакты,build/html-preview/index.html; build/knowledge-index.json,Найти ситуацию и связанные документы,5,CHECK,
+RNM-0002,СПН,Найти городской контакт,Лист Контакты,Контакты; ЖКХ; Управляющие компании,build/html-preview/index.html,Проверить статус и дату последней проверки контакта,5,CHECK,
+RNM-0003,СПН,Предложить исправление,Очередь предложений,Предложения,data/drafts/change-request-queue.csv; build/change-request-report.md,Создать заявку с приоритетом и источником,4,CHECK,
+RNM-0004,менеджер,Оценить готовность базы,Управленческая сводка,Готовность; Актуальность; Предложения,build/manager-dashboard.md; build/preflight-summary.md,Разобрать WARN и назначить ответственных,5,CHECK,
+RNM-0005,менеджер,Подготовить запуск Google Таблицы,Планы Google Таблицы,Google Таблица,build/google-sheet-tabs-plan.md; build/google-sheet-validation-plan.md; build/google-sheet-formatting-plan.md,Проверить порядок листов и валидации,5,CHECK,
+RNM-0006,юрист,Проверить юридический риск,База знаний и документы,Документы; Ситуации; FAQ,build/knowledge-index.json; build/relationship-report.md,Проверить связанные документы и ситуации,5,CHECK,
+RNM-0007,юрист,Разобрать правку по инструкции,Очередь предложений,Предложения; База знаний,build/change-request-report.md,Принять или отклонить юридически значимую правку,4,CHECK,
+RNM-0008,брокер,Найти ипотечную подсказку,Правила подсказок и контакты банков,Ипотека; Банки; Подсказки,build/deal-hint-preview.md; build/deal-hint-rules-report.md,Проверить банк документы и связанный сценарий,4,CHECK,
+RNM-0009,администратор базы,Проверить структуру,Preflight-сводка,Все разделы,build/preflight-summary.md; build/schema-report.md; build/id-registry.md,Исправить технические замечания до импорта,5,CHECK,
+RNM-0010,администратор базы,Проверить будущую интеграцию,Интеграционные отчёты,Интеграция,build/integration-contract-report.md; build/integration-access-report.md; build/integration-json-fields-report.md,Проверить контракты доступы и обязательные поля,4,CHECK,
