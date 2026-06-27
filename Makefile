@@ -1,6 +1,6 @@
 PYTHON=python
 
-.PHONY: install validate validate-warn sources privacy privacy-strict xlsx html-preview html-check report missing readiness coverage ids schemas import-plan tabs-plan validation-plan formatting-plan knowledge-index knowledge-check relationships deal-hints deal-signals deal-hint-preview deal-audiences deal-hint-api-examples integration-json-fields integration-contracts summary artifact-index inventory preflight
+.PHONY: install validate validate-warn sources privacy privacy-strict xlsx html-preview html-check report missing readiness coverage ids schemas import-plan tabs-plan validation-plan formatting-plan knowledge-index knowledge-check relationships deal-hints deal-signals deal-hint-preview deal-audiences deal-hint-ui-map deal-hint-api-examples integration-json-fields integration-contracts summary artifact-index inventory preflight
 
 install:
 	pip install -r requirements.txt
@@ -80,6 +80,9 @@ deal-hint-preview: deal-hints
 deal-audiences:
 	$(PYTHON) scripts/tools/build_deal_audience_report.py
 
+deal-hint-ui-map: deal-hints
+	$(PYTHON) scripts/tools/build_deal_hint_ui_map.py
+
 deal-hint-api-examples: deal-hint-preview
 	$(PYTHON) scripts/tools/build_deal_hint_api_examples.py
 
@@ -98,4 +101,4 @@ artifact-index:
 inventory:
 	$(PYTHON) scripts/tools/list_project_files.py
 
-preflight: validate sources privacy xlsx html-check report missing readiness coverage ids schemas import-plan tabs-plan validation-plan formatting-plan relationships deal-hints deal-signals deal-hint-preview deal-audiences deal-hint-api-examples integration-json-fields integration-contracts summary artifact-index inventory
+preflight: validate sources privacy xlsx html-check report missing readiness coverage ids schemas import-plan tabs-plan validation-plan formatting-plan relationships deal-hints deal-signals deal-hint-preview deal-audiences deal-hint-ui-map deal-hint-api-examples integration-json-fields integration-contracts summary artifact-index inventory
