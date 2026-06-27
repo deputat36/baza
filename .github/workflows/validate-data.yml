@@ -94,6 +94,9 @@ jobs:
       - name: Build deal audience report
         run: python scripts/tools/build_deal_audience_report.py
 
+      - name: Build integration contract report
+        run: python scripts/tools/build_integration_contract_report.py
+
       - name: Build preflight summary
         run: python scripts/tools/build_preflight_summary.py
 
