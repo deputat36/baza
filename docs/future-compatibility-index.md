@@ -11,10 +11,13 @@
 - `docs/future-navigator-compatibility.md` — принцип будущей связки с Навигатором сделок.
 - `docs/knowledge-index.md` — описание JSON-индекса знаний.
 - `docs/relationship-report.md` — описание отчёта по связям между ID.
+- `docs/deal-signals.md` — описание словаря сигналов сделки.
+- `docs/deal-signal-report.md` — описание отчёта по покрытию сигналов.
 - `docs/deal-hint-rules.md` — описание правил будущих подсказок сделки.
 
 ## Данные
 
+- `data/dictionaries/deal-signals.csv` — словарь допустимых сигналов сделки.
 - `data/drafts/deal-hint-rules.csv` — черновик правил, которые связывают признаки сделки с ID базы знаний.
 
 ## Скрипты
@@ -23,6 +26,7 @@
 - `scripts/tools/validate_knowledge_index.py` — проверяет структуру JSON-индекса.
 - `scripts/tools/build_relationship_report.py` — собирает отчёты по связям.
 - `scripts/tools/build_deal_hint_rules.py` — собирает JSON и отчёты по правилам подсказок.
+- `scripts/tools/build_deal_signal_report.py` — собирает отчёт по покрытию сигналов.
 
 ## Артефакты сборки
 
@@ -32,6 +36,8 @@
 - `build/deal-hint-rules.json`
 - `build/deal-hint-rules-report.md`
 - `build/deal-hint-rules-report.csv`
+- `build/deal-signal-report.md`
+- `build/deal-signal-report.csv`
 
 ## Команды
 
@@ -39,6 +45,7 @@
 make knowledge-check
 make relationships
 make deal-hints
+make deal-signals
 make preflight
 ```
 
@@ -50,4 +57,5 @@ make preflight
 - иметь текст для поиска;
 - иметь статус проверки;
 - ссылаться на связанные документы, контакты, инструкции и ситуации через стабильные ID;
-- попадать в правила подсказок, если она должна появляться при конкретном признаке сделки.
+- попадать в правила подсказок, если она должна появляться при конкретном признаке сделки;
+- использовать только сигналы из контролируемого словаря.
