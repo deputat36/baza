@@ -115,6 +115,9 @@ jobs:
       - name: Build integration contract report
         run: python scripts/tools/build_integration_contract_report.py
 
+      - name: Build manager dashboard
+        run: python scripts/tools/build_manager_dashboard.py
+
       - name: Build preflight summary
         run: python scripts/tools/build_preflight_summary.py
 
