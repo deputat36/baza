@@ -100,6 +100,9 @@ jobs:
       - name: Validate integration JSON fields
         run: python scripts/tools/validate_integration_json_fields.py
 
+      - name: Build integration visibility report
+        run: python scripts/tools/build_integration_data_visibility_report.py
+
       - name: Build integration contract report
         run: python scripts/tools/build_integration_contract_report.py
 
