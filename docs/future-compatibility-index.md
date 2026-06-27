@@ -18,6 +18,7 @@
 - `docs/deal-hint-ui-map.md` — описание карты размещения подсказок в будущем интерфейсе.
 - `docs/deal-hint-api-examples.md` — описание безопасных примеров request/response для будущего интерфейса.
 - `docs/integration-data-visibility.md` — описание публичных и закрытых данных будущей интеграции.
+- `docs/integration-access-matrix.md` — описание матрицы доступа ролей к областям данных.
 - `docs/integration-json-fields.md` — описание обязательных верхнеуровневых полей JSON-контрактов.
 - `docs/integration-contracts.md` — описание read-only контрактов будущей интеграции.
 - `docs/integration-contract-report.md` — описание отчёта по готовности контрактов.
@@ -35,6 +36,7 @@
 - `data/drafts/deal-hint-rules.csv` — черновик правил, которые связывают признаки сделки с ID базы знаний.
 - `data/drafts/deal-hint-scenarios.csv` — безопасные тестовые сценарии без реальных сделок.
 - `data/drafts/deal-hint-ui-map.csv` — карта размещения правил подсказок по зонам будущего интерфейса.
+- `data/drafts/integration-access-matrix.csv` — матрица доступа ролей к публичным и закрытым данным.
 
 ## Скрипты
 
@@ -49,6 +51,7 @@
 - `scripts/tools/build_deal_hint_api_examples.py` — собирает безопасные примеры request/response для будущего интерфейса.
 - `scripts/tools/validate_integration_json_fields.py` — проверяет обязательные поля JSON-контрактов.
 - `scripts/tools/build_integration_data_visibility_report.py` — проверяет карту публичных и закрытых данных.
+- `scripts/tools/build_integration_access_report.py` — проверяет матрицу доступа ролей.
 - `scripts/tools/build_integration_contract_report.py` — проверяет готовность контрактов будущей интеграции.
 
 ## Артефакты сборки
@@ -74,6 +77,8 @@
 - `build/deal-hint-api-examples.csv`
 - `build/integration-data-visibility-report.md`
 - `build/integration-data-visibility-report.csv`
+- `build/integration-access-report.md`
+- `build/integration-access-report.csv`
 - `build/integration-json-fields-report.md`
 - `build/integration-json-fields-report.csv`
 - `build/integration-contract-report.md`
@@ -92,6 +97,7 @@ make deal-hint-ui-map
 make deal-hint-api-examples
 make integration-json-fields
 make integration-visibility
+make integration-access
 make integration-contracts
 make preflight
 ```
@@ -111,5 +117,6 @@ make preflight
 - иметь безопасный пример request/response, если она участвует в будущих подсказках;
 - сохранять минимальную стабильную структуру JSON-контрактов;
 - иметь понятный уровень видимости: публичный или закрытый контур;
+- иметь понятную матрицу доступа ролей к публичным и закрытым данным;
 - входить в явно описанные контракты интеграции, если она нужна будущему интерфейсу;
 - проходить проверку на безопасных тестовых сценариях.
