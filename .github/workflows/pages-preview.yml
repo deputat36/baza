@@ -94,6 +94,9 @@ jobs:
       - name: Build deal hint API examples
         run: python scripts/tools/build_deal_hint_api_examples.py
 
+      - name: Validate integration JSON fields
+        run: python scripts/tools/validate_integration_json_fields.py
+
       - name: Build integration contract report
         run: python scripts/tools/build_integration_contract_report.py
 
