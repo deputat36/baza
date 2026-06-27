@@ -22,6 +22,7 @@ python scripts/tools/build_workbook_from_csv.py
 python scripts/tools/build_html_preview.py
 python scripts/tools/validate_html_preview.py
 python scripts/tools/build_data_report.py
+python scripts/tools/build_missing_values_report.py
 python scripts/tools/build_source_coverage_report.py
 python scripts/tools/build_id_registry_report.py
 python scripts/tools/build_schema_report.py
@@ -56,6 +57,7 @@ python scripts/tools/privacy_scan.py --strict
 - Сборка HTML-превью.
 - Smoke-проверка HTML-превью.
 - Технический отчёт по данным.
+- Отчёт по незаполненным данным.
 - Отчёт покрытия CSV-источников XLSX-сборкой.
 - Реестр ID и возможные дубли.
 - Отчёт по схемам CSV.
@@ -76,12 +78,13 @@ python scripts/tools/privacy_scan.py --strict
 
 `privacy_scan.py` по умолчанию печатает предупреждения и не блокирует процесс. В строгом режиме `--strict` он завершится с ошибкой при найденных рисках.
 
-`build_source_coverage_report.py`, `build_id_registry_report.py`, `build_schema_report.py`, `build_import_plan.py`, `build_google_sheet_tabs_plan.py`, `build_google_sheet_validation_plan.py`, `build_google_sheet_formatting_plan.py` и `build_preflight_summary.py` формируют диагностические отчёты для ручной проверки.
+`build_missing_values_report.py`, `build_source_coverage_report.py`, `build_id_registry_report.py`, `build_schema_report.py`, `build_import_plan.py`, `build_google_sheet_tabs_plan.py`, `build_google_sheet_validation_plan.py`, `build_google_sheet_formatting_plan.py` и `build_preflight_summary.py` формируют диагностические отчёты для ручной проверки.
 
 ## Что проверить вручную
 
 - Сначала открыть `build/preflight-summary.md`.
 - Проверить `build/html-preview/index.html` в браузере.
+- Проверить `build/missing-values-report.md`: пустые ID, статусы, приоритеты и файлы с большим числом пустых ячеек.
 - Проверить `build/google-sheet-tabs-plan.md` перед созданием листов.
 - Проверить `build/google-sheet-validation-plan.md` перед настройкой выпадающих списков.
 - Проверить `build/google-sheet-formatting-plan.md` перед настройкой цветов, фильтров и закрепления строк.
