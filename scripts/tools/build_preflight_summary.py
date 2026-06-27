@@ -19,6 +19,8 @@ EXPECTED_ARTIFACTS = [
     ("html-preview/index.html", "Статическое HTML-превью CSV-структуры"),
     ("manager-dashboard.md", "Управленческая сводка для менеджера"),
     ("manager-dashboard.csv", "Табличная версия управленческой сводки"),
+    ("role-navigation-report.md", "Навигация по ролям сотрудников"),
+    ("role-navigation-report.csv", "Табличная версия навигации по ролям"),
     ("launch-readiness-report.md", "Отчёт готовности разделов к запуску"),
     ("launch-readiness-report.csv", "Табличная версия отчёта готовности"),
     ("data-freshness-report.md", "Отчёт актуальности данных"),
@@ -46,6 +48,7 @@ EXPECTED_ARTIFACTS = [
 MANUAL_CHECKS = [
     "Открыть `index.html` как стартовую страницу артефактов.",
     "Открыть `manager-dashboard.md`: посмотреть WARN и ближайшие действия.",
+    "Открыть `role-navigation-report.md`: проверить маршруты для СПН, менеджера, юриста, брокера и администратора.",
     "Открыть XLSX и проверить список листов.",
     "Открыть `html-preview/index.html` и быстро просмотреть CSV-структуру в браузере.",
     "Проверить `launch-readiness-report.md`: какие листы READY, CHECK и DRAFT.",
