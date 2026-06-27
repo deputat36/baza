@@ -1,6 +1,6 @@
 PYTHON=python
 
-.PHONY: install validate validate-warn sources privacy privacy-strict xlsx html-preview html-check report missing coverage ids schemas import-plan tabs-plan validation-plan formatting-plan summary inventory preflight
+.PHONY: install validate validate-warn sources privacy privacy-strict xlsx html-preview html-check report missing readiness coverage ids schemas import-plan tabs-plan validation-plan formatting-plan summary inventory preflight
 
 install:
 	pip install -r requirements.txt
@@ -35,6 +35,9 @@ report:
 missing:
 	$(PYTHON) scripts/tools/build_missing_values_report.py
 
+readiness:
+	$(PYTHON) scripts/tools/build_launch_readiness_report.py
+
 coverage:
 	$(PYTHON) scripts/tools/build_source_coverage_report.py
 
@@ -62,4 +65,4 @@ summary:
 inventory:
 	$(PYTHON) scripts/tools/list_project_files.py
 
-preflight: validate sources privacy xlsx html-check report missing coverage ids schemas import-plan tabs-plan validation-plan formatting-plan summary inventory
+preflight: validate sources privacy xlsx html-check report missing readiness coverage ids schemas import-plan tabs-plan validation-plan formatting-plan summary inventory
