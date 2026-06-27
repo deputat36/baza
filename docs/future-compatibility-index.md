@@ -10,6 +10,7 @@
 
 - `docs/future-navigator-compatibility.md` — принцип будущей связки с Навигатором сделок.
 - `docs/data-freshness.md` — описание контроля актуальности данных.
+- `docs/change-request-queue.md` — описание очереди предложений и исправлений.
 - `docs/knowledge-index.md` — описание JSON-индекса знаний.
 - `docs/relationship-report.md` — описание отчёта по связям между ID.
 - `docs/deal-signals.md` — описание словаря сигналов сделки.
@@ -29,6 +30,7 @@
 ## Данные
 
 - `data/dictionaries/freshness-policies.csv` — политики актуальности данных.
+- `data/dictionaries/change-request-statuses.csv` — статусы заявок на изменение.
 - `data/dictionaries/deal-signals.csv` — словарь допустимых сигналов сделки.
 - `data/dictionaries/deal-audiences.csv` — словарь допустимых аудиторий подсказок.
 - `data/dictionaries/deal-hint-ui-zones.csv` — словарь допустимых зон будущего интерфейса подсказок.
@@ -36,6 +38,7 @@
 - `data/dictionaries/integration-json-fields.csv` — минимальные обязательные поля JSON-контрактов.
 - `data/dictionaries/integration-data-visibility.csv` — карта публичных и закрытых данных.
 - `data/drafts/data-freshness-register.csv` — реестр контроля актуальности разделов.
+- `data/drafts/change-request-queue.csv` — очередь предложений и исправлений.
 - `data/drafts/deal-hint-rules.csv` — черновик правил, которые связывают признаки сделки с ID базы знаний.
 - `data/drafts/deal-hint-scenarios.csv` — безопасные тестовые сценарии без реальных сделок.
 - `data/drafts/deal-hint-ui-map.csv` — карта размещения правил подсказок по зонам будущего интерфейса.
@@ -44,6 +47,7 @@
 ## Скрипты
 
 - `scripts/tools/build_data_freshness_report.py` — собирает отчёт актуальности данных.
+- `scripts/tools/build_change_request_report.py` — собирает отчёт по очереди предложений и исправлений.
 - `scripts/tools/build_knowledge_index.py` — собирает `build/knowledge-index.json`.
 - `scripts/tools/validate_knowledge_index.py` — проверяет структуру JSON-индекса.
 - `scripts/tools/build_relationship_report.py` — собирает отчёты по связям.
@@ -62,6 +66,8 @@
 
 - `build/data-freshness-report.md`
 - `build/data-freshness-report.csv`
+- `build/change-request-report.md`
+- `build/change-request-report.csv`
 - `build/knowledge-index.json`
 - `build/relationship-report.md`
 - `build/relationship-report.csv`
@@ -94,6 +100,7 @@
 
 ```bash
 make freshness
+make change-requests
 make knowledge-check
 make relationships
 make deal-hints
@@ -117,6 +124,7 @@ make preflight
 - иметь текст для поиска;
 - иметь статус проверки;
 - иметь понятный срок повторной проверки;
+- иметь контролируемый процесс предложений и исправлений;
 - ссылаться на связанные документы, контакты, инструкции и ситуации через стабильные ID;
 - попадать в правила подсказок, если она должна появляться при конкретном признаке сделки;
 - использовать только сигналы из контролируемого словаря;
