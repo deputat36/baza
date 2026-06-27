@@ -31,6 +31,7 @@
 - `docs/generated-google-sheet-tabs-plan.md` — генерируемый план листов Google Таблицы.
 - `docs/generated-google-sheet-validation-plan.md` — генерируемый план выпадающих списков.
 - `docs/generated-google-sheet-formatting-plan.md` — генерируемый план оформления Google Таблицы.
+- `docs/launch-readiness-report.md` — отчёт готовности разделов к запуску.
 - `docs/missing-values-report.md` — отчёт по незаполненным данным CSV.
 - `docs/google-apps-script-menu.md` — меню `База знаний` в Google Таблице.
 - `docs/google-apps-script-validation.md` — проверка закрытой Google Таблицы через Apps Script.
@@ -109,6 +110,7 @@
 - `scripts/tools/validate_workbook_sources.py` — проверка источников XLSX.
 - `scripts/tools/build_data_report.py` — отчёт по CSV-файлам.
 - `scripts/tools/build_missing_values_report.py` — отчёт по незаполненным данным.
+- `scripts/tools/build_launch_readiness_report.py` — отчёт готовности разделов к запуску.
 - `scripts/tools/build_source_coverage_report.py` — отчёт покрытия CSV-источников.
 - `scripts/tools/build_id_registry_report.py` — реестр ID.
 - `scripts/tools/build_schema_report.py` — отчёт по схемам CSV.
