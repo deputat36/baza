@@ -17,6 +17,7 @@ SHEETS = [
         "data/dictionaries/statuses.csv",
         "data/dictionaries/priorities.csv",
         "data/dictionaries/categories-core.csv",
+        "data/dictionaries/freshness-policies.csv",
     ]),
     ("Контакты", [
         "templates/contacts-template.csv",
@@ -62,6 +63,9 @@ SHEETS = [
     ("Обучение", [
         "data/drafts/training-checklists.csv",
         "data/drafts/user-scenarios.csv",
+    ]),
+    ("Актуальность", [
+        "data/drafts/data-freshness-register.csv",
     ]),
     ("Интеграция", [
         "data/dictionaries/deal-signals.csv",
