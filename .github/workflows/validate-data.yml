@@ -73,9 +73,6 @@ jobs:
       - name: Build section ownership report
         run: python scripts/tools/build_section_ownership_report.py
 
-      - name: Build office acceptance test report
-        run: python scripts/tools/build_office_acceptance_test_report.py
-
       - name: Build import plan
         run: python scripts/tools/build_import_plan.py
 
@@ -129,6 +126,9 @@ jobs:
 
       - name: Build manager dashboard
         run: python scripts/tools/build_manager_dashboard.py
+
+      - name: Build office acceptance test report
+        run: python scripts/tools/build_office_acceptance_test_report.py
 
       - name: Build office launch checklist report
         run: python scripts/tools/build_office_launch_checklist_report.py
