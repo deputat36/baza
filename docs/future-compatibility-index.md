@@ -11,6 +11,7 @@
 - `docs/future-navigator-compatibility.md` — принцип будущей связки с Навигатором сделок.
 - `docs/manager-dashboard.md` — описание управленческой сводки.
 - `docs/role-navigation.md` — описание навигации по ролям сотрудников.
+- `docs/section-ownership.md` — описание ответственности за разделы базы.
 - `docs/office-launch-checklist.md` — описание чек-листа запуска базы в офисе.
 - `docs/data-freshness.md` — описание контроля актуальности данных.
 - `docs/change-request-queue.md` — описание очереди предложений и исправлений.
@@ -43,6 +44,7 @@
 - `data/drafts/data-freshness-register.csv` — реестр контроля актуальности разделов.
 - `data/drafts/change-request-queue.csv` — очередь предложений и исправлений.
 - `data/drafts/role-navigation-map.csv` — навигация по ролям сотрудников.
+- `data/drafts/section-ownership-matrix.csv` — матрица владельцев разделов базы.
 - `data/drafts/office-launch-checklist.csv` — чек-лист запуска базы в офисе.
 - `data/drafts/deal-hint-rules.csv` — черновик правил, которые связывают признаки сделки с ID базы знаний.
 - `data/drafts/deal-hint-scenarios.csv` — безопасные тестовые сценарии без реальных сделок.
@@ -53,6 +55,7 @@
 
 - `scripts/tools/build_manager_dashboard.py` — собирает короткую управленческую сводку из детальных отчётов.
 - `scripts/tools/build_role_navigation_report.py` — собирает отчёт по навигации для ролей.
+- `scripts/tools/build_section_ownership_report.py` — собирает отчёт по владельцам разделов базы.
 - `scripts/tools/build_office_launch_checklist_report.py` — собирает отчёт по чек-листу запуска базы в офисе.
 - `scripts/tools/build_data_freshness_report.py` — собирает отчёт актуальности данных.
 - `scripts/tools/build_change_request_report.py` — собирает отчёт по очереди предложений и исправлений.
@@ -76,6 +79,8 @@
 - `build/manager-dashboard.csv`
 - `build/role-navigation-report.md`
 - `build/role-navigation-report.csv`
+- `build/section-ownership-report.md`
+- `build/section-ownership-report.csv`
 - `build/office-launch-checklist-report.md`
 - `build/office-launch-checklist-report.csv`
 - `build/data-freshness-report.md`
@@ -115,6 +120,7 @@
 ```bash
 make manager-dashboard
 make role-navigation
+make ownership
 make office-launch
 make freshness
 make change-requests
@@ -143,6 +149,7 @@ make preflight
 - иметь понятный срок повторной проверки;
 - иметь управленческую сводку рисков и ближайших действий;
 - иметь понятный маршрут просмотра для разных ролей сотрудников;
+- иметь владельца и замещающего для эксплуатации после запуска;
 - входить в понятный чек-лист запуска в офисе, если она влияет на готовность базы;
 - иметь контролируемый процесс предложений и исправлений;
 - ссылаться на связанные документы, контакты, инструкции и ситуации через стабильные ID;
