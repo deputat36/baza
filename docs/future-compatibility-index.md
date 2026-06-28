@@ -13,6 +13,7 @@
 - `docs/role-navigation.md` — описание навигации по ролям сотрудников.
 - `docs/section-ownership.md` — описание ответственности за разделы базы.
 - `docs/office-acceptance-tests.md` — описание приемочных сценариев офиса.
+- `docs/role-training.md` — описание обучения сотрудников по ролям.
 - `docs/office-launch-checklist.md` — описание чек-листа запуска базы в офисе.
 - `docs/operating-rhythm.md` — описание регулярной эксплуатации после запуска.
 - `docs/data-freshness.md` — описание контроля актуальности данных.
@@ -48,6 +49,7 @@
 - `data/drafts/role-navigation-map.csv` — навигация по ролям сотрудников.
 - `data/drafts/section-ownership-matrix.csv` — матрица владельцев разделов базы.
 - `data/drafts/office-acceptance-tests.csv` — приемочные сценарии офиса.
+- `data/drafts/role-training-plan.csv` — план обучения сотрудников по ролям.
 - `data/drafts/office-launch-checklist.csv` — чек-лист запуска базы в офисе.
 - `data/drafts/operating-rhythm.csv` — регламент регулярной эксплуатации базы.
 - `data/drafts/deal-hint-rules.csv` — черновик правил, которые связывают признаки сделки с ID базы знаний.
@@ -61,6 +63,7 @@
 - `scripts/tools/build_role_navigation_report.py` — собирает отчёт по навигации для ролей.
 - `scripts/tools/build_section_ownership_report.py` — собирает отчёт по владельцам разделов базы.
 - `scripts/tools/build_office_acceptance_test_report.py` — собирает отчёт по приемочным сценариям офиса.
+- `scripts/tools/build_role_training_report.py` — собирает отчёт по обучению сотрудников.
 - `scripts/tools/build_office_launch_checklist_report.py` — собирает отчёт по чек-листу запуска базы в офисе.
 - `scripts/tools/build_operating_rhythm_report.py` — собирает отчёт по регулярной эксплуатации базы.
 - `scripts/tools/build_data_freshness_report.py` — собирает отчёт актуальности данных.
@@ -89,6 +92,8 @@
 - `build/section-ownership-report.csv`
 - `build/office-acceptance-test-report.md`
 - `build/office-acceptance-test-report.csv`
+- `build/role-training-report.md`
+- `build/role-training-report.csv`
 - `build/office-launch-checklist-report.md`
 - `build/office-launch-checklist-report.csv`
 - `build/operating-rhythm-report.md`
@@ -132,6 +137,7 @@ make manager-dashboard
 make role-navigation
 make ownership
 make acceptance-tests
+make role-training
 make operating-rhythm
 make office-launch
 make freshness
@@ -163,6 +169,7 @@ make preflight
 - иметь понятный маршрут просмотра для разных ролей сотрудников;
 - иметь владельца и замещающего для эксплуатации после запуска;
 - проходить ручную приемку по роли сотрудника перед запуском;
+- быть включенной в обучение сотрудников, если она влияет на рабочий процесс;
 - входить в регулярный цикл эксплуатации после запуска;
 - входить в понятный чек-лист запуска в офисе, если она влияет на готовность базы;
 - иметь контролируемый процесс предложений и исправлений;
