@@ -136,6 +136,9 @@ jobs:
       - name: Build operating rhythm report
         run: python scripts/tools/build_operating_rhythm_report.py
 
+      - name: Build role training report
+        run: python scripts/tools/build_role_training_report.py
+
       - name: Build preflight summary
         run: python scripts/tools/build_preflight_summary.py
 
