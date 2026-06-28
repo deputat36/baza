@@ -30,6 +30,19 @@ SOURCES = {
     "freshness": BUILD_DIR / "data-freshness-report.csv",
 }
 
+STATUS_FIELDS = [
+    "status",
+    "metric_status",
+    "decision_status",
+    "action_status",
+    "request_status",
+    "freshness_status",
+    "check_status",
+    "status_current",
+    "current_status",
+    "Статус",
+]
+
 OPEN_STATUSES = {"NEW", "OPEN", "CHECK", "DRAFT", "PENDING", "IN_PROGRESS", "WARN"}
 DONE_STATUSES = {"DONE", "CLOSED", "READY", "OK", "RESOLVED", "COMPLETE", "COMPLETED"}
 RISK_STATUSES = {"BLOCKER", "WARN", "CHECK", "DRAFT", "PENDING", "EXPIRED", "HIGH"}
@@ -65,7 +78,7 @@ def count_by_status(rows, fields, statuses):
 def count_open(rows):
     count = 0
     for row in rows:
-        value = normalized(first_existing(row, ["status", "metric_status", "decision_status", "Статус", "status_current"]))
+        value = normalized(first_existing(row, STATUS_FIELDS))
         if not value:
             continue
         if value in OPEN_STATUSES and value not in DONE_STATUSES:
@@ -157,11 +170,7 @@ def build_rows():
         SOURCES["change_requests"].name,
     )
 
-    freshness_risk = count_by_status(
-        freshness,
-        ["freshness_status", "status", "Статус", "check_status"],
-        RISK_STATUSES,
-    )
+    freshness_risk = count_by_status(freshness, STATUS_FIELDS, RISK_STATUSES)
     add_row(
         rows,
         "Актуальность",
