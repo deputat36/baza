@@ -10,6 +10,7 @@
 
 - `docs/future-navigator-compatibility.md` — принцип будущей связки с Навигатором сделок.
 - `docs/manager-dashboard.md` — описание управленческой сводки.
+- `docs/go-no-go-report.md` — описание итогового решения GO/NO-GO перед запуском.
 - `docs/role-navigation.md` — описание навигации по ролям сотрудников.
 - `docs/section-ownership.md` — описание ответственности за разделы базы.
 - `docs/office-acceptance-tests.md` — описание приемочных сценариев офиса.
@@ -61,6 +62,7 @@
 ## Скрипты
 
 - `scripts/tools/build_manager_dashboard.py` — собирает короткую управленческую сводку из детальных отчётов.
+- `scripts/tools/build_go_no_go_report.py` — собирает итог GO/NO-GO перед запуском.
 - `scripts/tools/build_role_navigation_report.py` — собирает отчёт по навигации для ролей.
 - `scripts/tools/build_section_ownership_report.py` — собирает отчёт по владельцам разделов базы.
 - `scripts/tools/build_office_acceptance_test_report.py` — собирает отчёт по приемочным сценариям офиса.
@@ -88,6 +90,8 @@
 
 - `build/manager-dashboard.md`
 - `build/manager-dashboard.csv`
+- `build/go-no-go-report.md`
+- `build/go-no-go-report.csv`
 - `build/role-navigation-report.md`
 - `build/role-navigation-report.csv`
 - `build/section-ownership-report.md`
@@ -138,6 +142,7 @@
 
 ```bash
 make manager-dashboard
+make go-no-go
 make role-navigation
 make ownership
 make acceptance-tests
@@ -171,6 +176,7 @@ make preflight
 - иметь статус проверки;
 - иметь понятный срок повторной проверки;
 - иметь управленческую сводку рисков и ближайших действий;
+- входить в итоговую проверку GO/NO-GO перед запуском;
 - иметь понятный маршрут просмотра для разных ролей сотрудников;
 - иметь владельца и замещающего для эксплуатации после запуска;
 - проходить ручную приемку по роли сотрудника перед запуском;
