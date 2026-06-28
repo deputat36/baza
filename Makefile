@@ -1,6 +1,6 @@
 PYTHON=python
 
-.PHONY: install validate validate-warn sources privacy privacy-strict xlsx html-preview html-check report missing readiness coverage ids schemas freshness change-requests role-navigation ownership acceptance-tests role-training launch-packet operating-rhythm import-plan tabs-plan validation-plan formatting-plan knowledge-index knowledge-check relationships deal-hints deal-signals deal-hint-preview deal-audiences deal-hint-ui-map deal-hint-api-examples integration-json-fields integration-visibility integration-access integration-contracts manager-dashboard office-launch summary artifact-index inventory preflight
+.PHONY: install validate validate-warn sources privacy privacy-strict xlsx html-preview html-check report missing readiness coverage ids schemas freshness change-requests role-navigation ownership acceptance-tests role-training go-no-go launch-packet operating-rhythm import-plan tabs-plan validation-plan formatting-plan knowledge-index knowledge-check relationships deal-hints deal-signals deal-hint-preview deal-audiences deal-hint-ui-map deal-hint-api-examples integration-json-fields integration-visibility integration-access integration-contracts manager-dashboard office-launch summary artifact-index inventory preflight
 
 install:
 	pip install -r requirements.txt
@@ -65,7 +65,10 @@ acceptance-tests: manager-dashboard role-navigation ownership import-plan tabs-p
 role-training: manager-dashboard role-navigation ownership acceptance-tests office-launch operating-rhythm import-plan tabs-plan validation-plan formatting-plan
 	$(PYTHON) scripts/tools/build_role_training_report.py
 
-launch-packet: manager-dashboard role-navigation ownership acceptance-tests role-training office-launch operating-rhythm import-plan tabs-plan validation-plan formatting-plan integration-access integration-contracts knowledge-index
+go-no-go: ownership acceptance-tests role-training office-launch
+	$(PYTHON) scripts/tools/build_go_no_go_report.py
+
+launch-packet: manager-dashboard role-navigation ownership acceptance-tests role-training go-no-go office-launch operating-rhythm import-plan tabs-plan validation-plan formatting-plan integration-access integration-contracts knowledge-index
 	$(PYTHON) scripts/tools/build_office_launch_packet.py
 
 operating-rhythm: manager-dashboard role-navigation ownership acceptance-tests office-launch freshness change-requests integration-access integration-contracts
@@ -137,4 +140,4 @@ artifact-index:
 inventory:
 	$(PYTHON) scripts/tools/list_project_files.py
 
-preflight: validate sources privacy xlsx html-check report missing readiness coverage ids schemas freshness change-requests role-navigation ownership import-plan tabs-plan validation-plan formatting-plan relationships deal-hints deal-signals deal-hint-preview deal-audiences deal-hint-ui-map deal-hint-api-examples integration-json-fields integration-visibility integration-access integration-contracts manager-dashboard acceptance-tests office-launch operating-rhythm role-training launch-packet summary artifact-index inventory
+preflight: validate sources privacy xlsx html-check report missing readiness coverage ids schemas freshness change-requests role-navigation ownership import-plan tabs-plan validation-plan formatting-plan relationships deal-hints deal-signals deal-hint-preview deal-audiences deal-hint-ui-map deal-hint-api-examples integration-json-fields integration-visibility integration-access integration-contracts manager-dashboard acceptance-tests office-launch operating-rhythm role-training go-no-go launch-packet summary artifact-index inventory
