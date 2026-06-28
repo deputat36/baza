@@ -24,6 +24,8 @@ ARTIFACTS = [
     ("Главное", [
         ("HTML-превью", "html-preview/index.html", "Просмотр CSV-структуры в браузере"),
         ("XLSX-книга", OUTPUT_FILE.name, "Промежуточная Excel-книга"),
+        ("GO/NO-GO отчет", "go-no-go-report.md", "Итоговое управленческое решение перед запуском"),
+        ("GO/NO-GO CSV", "go-no-go-report.csv", "Табличная версия блокеров запуска"),
         ("Управленческая сводка", "manager-dashboard.md", "Короткий dashboard для менеджера"),
         ("Управленческая сводка CSV", "manager-dashboard.csv", "Табличная версия dashboard"),
         ("Навигация по ролям", "role-navigation-report.md", "С чего начинать СПН, менеджеру, юристу, брокеру и администратору"),
