@@ -133,6 +133,9 @@ jobs:
       - name: Build office launch checklist report
         run: python scripts/tools/build_office_launch_checklist_report.py
 
+      - name: Build operating rhythm report
+        run: python scripts/tools/build_operating_rhythm_report.py
+
       - name: Build preflight summary
         run: python scripts/tools/build_preflight_summary.py
 
