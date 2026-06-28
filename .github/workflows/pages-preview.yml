@@ -148,6 +148,9 @@ jobs:
       - name: Build adoption improvement plan
         run: python scripts/tools/build_adoption_improvement_plan.py
 
+      - name: Build weekly manager digest
+        run: python scripts/tools/build_weekly_manager_digest.py
+
       - name: Build office launch packet
         run: python scripts/tools/build_office_launch_packet.py
 
