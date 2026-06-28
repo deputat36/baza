@@ -148,6 +148,9 @@ jobs:
       - name: Build usage metrics report
         run: python scripts/tools/build_usage_metrics_report.py
 
+      - name: Build adoption improvement plan
+        run: python scripts/tools/build_adoption_improvement_plan.py
+
       - name: Build office launch packet
         run: python scripts/tools/build_office_launch_packet.py
 
