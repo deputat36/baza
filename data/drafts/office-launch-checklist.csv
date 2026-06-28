@@ -23,4 +23,4 @@ OLC-0021,Запуск,Проверить итог GO/NO-GO,менеджер,buil
 OLC-0022,Запуск,Зафиксировать решение запуска,менеджер,build/launch-decision-log.md,Высокая,CHECK,yes,
 OLC-0023,Запуск,Проверить единый пакет запуска,менеджер,build/office-launch-packet.md,Высокая,CHECK,yes,
 OLC-0024,Запуск,Определить канал для предложений сотрудников,менеджер,data/drafts/change-request-queue.csv,Средняя,CHECK,no,
-OLC-0025,После запуска,Проверить использование через неделю,менеджер,docs/knowledge-base-metrics.md,Средняя,CHECK,no,
+OLC-0025,После запуска,Проверить использование через неделю,менеджер,build/usage-metrics-report.md,Средняя,CHECK,no,
