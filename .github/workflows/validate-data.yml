@@ -73,6 +73,9 @@ jobs:
       - name: Build private contact schema report
         run: python scripts/tools/build_private_contact_schema_report.py
 
+      - name: Build contact verification report
+        run: python scripts/tools/build_contact_verification_report.py
+
       - name: Build role navigation report
         run: python scripts/tools/build_role_navigation_report.py
 
