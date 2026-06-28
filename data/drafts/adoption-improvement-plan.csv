@@ -1,0 +1,6 @@
+ID,Источник,Сигнал,Что улучшить,Ответственный,Приоритет,Статус,Артефакт,Комментарий
+AIP-0001,usage-metrics,Мало активных пользователей,Повторить обучение по ролям,менеджер,Высокий,DRAFT,build/role-training-report.md,
+AIP-0002,usage-metrics,Много запросов без результата,Добавить синонимы и недостающие ситуации,администратор базы,Высокий,DRAFT,data/dictionaries/search-synonyms.csv,
+AIP-0003,change-requests,Много открытых предложений,Разобрать очередь изменений,менеджер,Средний,DRAFT,build/change-request-report.md,
+AIP-0004,usage-metrics,Мало закрытых замечаний,Назначить ответственных за исправления,менеджер,Высокий,DRAFT,data/drafts/quality-issues-template.csv,
+AIP-0005,usage-metrics,Роль не использует базу,Проверить маршрут роли и упростить навигацию,менеджер,Средний,DRAFT,build/role-navigation-report.md,
