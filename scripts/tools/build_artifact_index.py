@@ -34,6 +34,8 @@ ARTIFACTS = [
         ("Приемочные сценарии CSV", "office-acceptance-test-report.csv", "Табличная версия приемочных сценариев"),
         ("Чек-лист запуска", "office-launch-checklist-report.md", "Что закрыть перед запуском базы в офисе"),
         ("Чек-лист запуска CSV", "office-launch-checklist-report.csv", "Табличная версия чек-листа запуска"),
+        ("Регламент эксплуатации", "operating-rhythm-report.md", "Что проверять регулярно после запуска"),
+        ("Регламент эксплуатации CSV", "operating-rhythm-report.csv", "Табличная версия регулярных задач"),
         ("JSON-индекс знаний", "knowledge-index.json", "Read-only индекс для поиска и будущих интеграций"),
         ("Preflight-сводка", "preflight-summary.md", "Список артефактов и ручной чек-лист"),
     ]),
