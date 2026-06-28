@@ -151,6 +151,9 @@ jobs:
       - name: Build weekly manager digest
         run: python scripts/tools/build_weekly_manager_digest.py
 
+      - name: Build manager action register
+        run: python scripts/tools/build_manager_action_register.py
+
       - name: Build office launch packet
         run: python scripts/tools/build_office_launch_packet.py
 
