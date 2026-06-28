@@ -136,6 +136,9 @@ jobs:
       - name: Build role training report
         run: python scripts/tools/build_role_training_report.py
 
+      - name: Build office launch packet
+        run: python scripts/tools/build_office_launch_packet.py
+
       - name: Build preflight summary
         run: python scripts/tools/build_preflight_summary.py
 
