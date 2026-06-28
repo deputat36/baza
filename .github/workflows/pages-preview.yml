@@ -67,6 +67,9 @@ jobs:
       - name: Build source trust report
         run: python scripts/tools/build_source_trust_report.py
 
+      - name: Build record lifecycle report
+        run: python scripts/tools/build_record_lifecycle_report.py
+
       - name: Build department routing report
         run: python scripts/tools/build_department_routing_report.py
 
