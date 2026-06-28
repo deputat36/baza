@@ -41,7 +41,6 @@ PACKET_ITEMS = [
     ("17", "Безопасность", "integration-access-report.md", "Проверить матрицу доступа к закрытым данным"),
     ("18", "Контракты", "integration-contract-report.md", "Проверить готовность read-only контрактов"),
     ("19", "Совместимость", "knowledge-index.json", "Проверить наличие JSON-индекса знаний"),
-    ("20", "Preflight", "preflight-summary.md", "Проверить итоговую preflight-сводку"),
 ]
 
 
