@@ -27,6 +27,11 @@ except ImportError:
 OUTPUT_FILE = BUILD_DIR / "knowledge-index.json"
 SCHEMA_VERSION = "kb-index-v1"
 
+# Шаблоны нужны для XLSX и структуры проекта, но не должны попадать
+# в поисковый индекс как рабочие знания. В них есть примерные строки,
+# которые могут дублировать реальные черновики по ID.
+EXCLUDED_INDEX_PREFIXES = ("templates/",)
+
 TITLE_COLUMNS = [
     "Название",
     "Ситуация",
@@ -110,6 +115,11 @@ def build_search_text(row: dict[str, Any]) -> str:
     return " ".join(values)
 
 
+def should_index_source(source: str) -> bool:
+    normalized = source.replace("\\", "/")
+    return not normalized.startswith(EXCLUDED_INDEX_PREFIXES)
+
+
 def iter_sources():
     seen = set()
     for sheet_name, sources in SHEETS:
@@ -125,6 +135,10 @@ def build_index():
     skipped_sources = []
 
     for sheet_name, source, path in iter_sources():
+        if not should_index_source(source):
+            skipped_sources.append({"source": source, "reason": "template_excluded"})
+            continue
+
         if not path.exists():
             skipped_sources.append({"source": source, "reason": "missing"})
             continue
@@ -152,7 +166,7 @@ def build_index():
     return {
         "schema_version": SCHEMA_VERSION,
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "source": "deputat36/baza CSV drafts and templates",
+        "source": "deputat36/baza CSV drafts without template examples",
         "purpose": "Read-only knowledge index for preview, search and future integrations.",
         "records_count": len(records),
         "skipped_sources": skipped_sources,
