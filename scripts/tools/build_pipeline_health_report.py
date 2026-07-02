@@ -332,6 +332,21 @@ def write_csv(rows: list[dict[str, str]]) -> None:
         writer.writerows(rows)
 
 
+def refresh_artifact_index() -> None:
+    """Обновляет стартовую страницу артефактов после появления pipeline-health отчета."""
+    try:
+        import build_artifact_index
+    except Exception as error:
+        print(f"Artifact index refresh skipped: {error}")
+        return
+
+    try:
+        build_artifact_index.main()
+        print("Artifact index refreshed after pipeline health report.")
+    except Exception as error:
+        print(f"Artifact index refresh failed: {error}")
+
+
 def main() -> None:
     BUILD_DIR.mkdir(parents=True, exist_ok=True)
     rows = build_rows()
@@ -339,6 +354,7 @@ def main() -> None:
     write_csv(rows)
     print(f"Pipeline health report written: {REPORT_MD}")
     print(f"Pipeline health CSV written: {REPORT_CSV}")
+    refresh_artifact_index()
 
 
 if __name__ == "__main__":
