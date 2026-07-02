@@ -38,6 +38,8 @@ make preflight
 - `build/pipeline-health-report.md` — человекочитаемый отчет;
 - `build/pipeline-health-report.csv` — табличная версия для анализа и фильтрации.
 
+После создания отчета генератор также пробует обновить `build/index.html`, чтобы стартовая страница артефактов видела свежий `pipeline-health-report.md`.
+
 ## Что проверяется
 
 Отчет проверяет:
