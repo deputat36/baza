@@ -49,7 +49,7 @@ make preflight
 5. Наличие важных маркеров в `README.md`.
 6. Наличие ключевых артефактов в `build_preflight_summary.py`.
 7. Наличие ключевых артефактов в `build_artifact_index.py`.
-8. Наличие итоговых целей `summary`, `artifact-index` и `inventory` в цепочке `preflight`.
+8. Наличие итоговых целей `summary`, `artifact-index`, `pipeline-health` и `inventory` в цепочке `preflight`.
 
 ## Статусы
 
