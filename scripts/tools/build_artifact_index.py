@@ -64,6 +64,8 @@ ARTIFACTS = [
         ("Регламент эксплуатации CSV", "operating-rhythm-report.csv", "Табличная версия регулярных задач"),
         ("JSON-индекс знаний", "knowledge-index.json", "Read-only индекс для поиска и будущих интеграций"),
         ("Preflight-сводка", "preflight-summary.md", "Список артефактов и ручной чек-лист"),
+        ("Pipeline health", "pipeline-health-report.md", "Проверка согласованности Makefile, workflow и генераторов"),
+        ("Pipeline health CSV", "pipeline-health-report.csv", "Табличная версия проверки согласованности сборочного контура"),
     ]),
     ("Готовность и качество данных", [
         ("Готовность к запуску", "launch-readiness-report.md", "Статусы READY/CHECK/DRAFT по листам"),
@@ -144,20 +146,20 @@ def render_cards():
             status, size = artifact_status(path)
             status_class = "ok" if status == "есть" else "missing"
             cards.append(f"""
-            <article class=\"card\">
-              <div class=\"card-top\">
+            <article class="card">
+              <div class="card-top">
                 <h3>{escape(title)}</h3>
-                <span class=\"status {status_class}\">{escape(status)}</span>
+                <span class="status {status_class}">{escape(status)}</span>
               </div>
               <p>{escape(description)}</p>
-              <p class=\"meta\">{escape(path)} · {escape(size)}</p>
-              <a href=\"{escape(path)}\">Открыть</a>
+              <p class="meta">{escape(path)} · {escape(size)}</p>
+              <a href="{escape(path)}">Открыть</a>
             </article>
             """)
         sections.append(f"""
         <section>
           <h2>{escape(group)}</h2>
-          <div class=\"grid\">{''.join(cards)}</div>
+          <div class="grid">{''.join(cards)}</div>
         </section>
         """)
     return "\n".join(sections)
@@ -166,10 +168,10 @@ def render_cards():
 def build_html():
     generated_at = datetime.now().strftime("%Y-%m-%d %H:%M")
     return f"""<!doctype html>
-<html lang=\"ru\">
+<html lang="ru">
 <head>
-  <meta charset=\"utf-8\">
-  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Артефакты сборки базы знаний</title>
   <style>
     :root {{
@@ -205,10 +207,10 @@ def build_html():
 <body>
   <header>
     <h1>Артефакты сборки базы знаний</h1>
-    <p class=\"summary\">Сгенерировано: {escape(generated_at)}.</p>
+    <p class="summary">Сгенерировано: {escape(generated_at)}.</p>
   </header>
   <main>
-    <div class=\"notice\">Это навигационная страница по артефактам сборки. Реальные рабочие данные должны храниться только в закрытой Google Таблице.</div>
+    <div class="notice">Это навигационная страница по артефактам сборки. Реальные рабочие данные должны храниться только в закрытой Google Таблице.</div>
     {render_cards()}
   </main>
 </body>
