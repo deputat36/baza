@@ -181,6 +181,9 @@ jobs:
       - name: Build artifact index
         run: python scripts/tools/build_artifact_index.py
 
+      - name: Build pipeline health report
+        run: python scripts/tools/build_pipeline_health_report.py
+
       - name: Inventory files
         run: python scripts/tools/list_project_files.py
 
