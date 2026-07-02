@@ -1,6 +1,6 @@
 PYTHON=python
 
-.PHONY: install validate validate-warn sources privacy privacy-strict xlsx html-preview html-check report missing readiness coverage ids schemas freshness change-requests source-trust record-lifecycle private-contact-schema contact-verification role-navigation ownership acceptance-tests role-training go-no-go launch-decision launch-packet usage-metrics adoption-plan weekly-digest manager-actions department-routing operating-rhythm import-plan tabs-plan validation-plan formatting-plan knowledge-index knowledge-check relationships deal-hints deal-signals deal-hint-preview deal-audiences deal-hint-ui-map deal-hint-api-examples integration-json-fields integration-visibility integration-access integration-contracts manager-dashboard office-launch summary artifact-index inventory preflight
+.PHONY: install validate validate-warn sources privacy privacy-strict xlsx html-preview html-check report missing readiness coverage ids schemas freshness change-requests source-trust record-lifecycle private-contact-schema contact-verification role-navigation ownership acceptance-tests role-training go-no-go launch-decision launch-packet usage-metrics adoption-plan weekly-digest manager-actions department-routing operating-rhythm import-plan tabs-plan validation-plan formatting-plan knowledge-index knowledge-check relationships deal-hints deal-signals deal-hint-preview deal-audiences deal-hint-ui-map deal-hint-api-examples integration-json-fields integration-visibility integration-access integration-contracts manager-dashboard office-launch summary artifact-index pipeline-health inventory preflight
 
 install:
 	pip install -r requirements.txt
@@ -167,7 +167,10 @@ summary:
 artifact-index:
 	$(PYTHON) scripts/tools/build_artifact_index.py
 
+pipeline-health:
+	$(PYTHON) scripts/tools/build_pipeline_health_report.py
+
 inventory:
 	$(PYTHON) scripts/tools/list_project_files.py
 
-preflight: validate sources privacy xlsx html-check report missing readiness coverage ids schemas freshness change-requests source-trust record-lifecycle department-routing private-contact-schema contact-verification role-navigation ownership import-plan tabs-plan validation-plan formatting-plan relationships deal-hints deal-signals deal-hint-preview deal-audiences deal-hint-ui-map deal-hint-api-examples integration-json-fields integration-visibility integration-access integration-contracts manager-dashboard acceptance-tests office-launch operating-rhythm role-training go-no-go launch-decision usage-metrics adoption-plan weekly-digest manager-actions launch-packet summary artifact-index inventory
+preflight: validate sources privacy xlsx html-check report missing readiness coverage ids schemas freshness change-requests source-trust record-lifecycle department-routing private-contact-schema contact-verification role-navigation ownership import-plan tabs-plan validation-plan formatting-plan relationships deal-hints deal-signals deal-hint-preview deal-audiences deal-hint-ui-map deal-hint-api-examples integration-json-fields integration-visibility integration-access integration-contracts manager-dashboard acceptance-tests office-launch operating-rhythm role-training go-no-go launch-decision usage-metrics adoption-plan weekly-digest manager-actions launch-packet summary artifact-index pipeline-health inventory
