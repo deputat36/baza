@@ -88,6 +88,7 @@ REQUIRED_MAKE_TARGETS = [
     "launch-packet",
     "summary",
     "artifact-index",
+    "pipeline-health",
     "inventory",
     "preflight",
 ]
@@ -101,6 +102,7 @@ README_REQUIRED_MARKERS = [
 
 PREFLIGHT_REQUIRED_MARKERS = [
     "preflight-summary.md",
+    "pipeline-health-report.md",
     "manager-dashboard.md",
     "go-no-go-report.md",
     "office-launch-packet.md",
@@ -108,6 +110,7 @@ PREFLIGHT_REQUIRED_MARKERS = [
 
 ARTIFACT_INDEX_REQUIRED_MARKERS = [
     "preflight-summary.md",
+    "pipeline-health-report.md",
     "manager-dashboard.md",
     "go-no-go-report.md",
     "knowledge-index.json",
@@ -254,7 +257,7 @@ def build_rows() -> list[dict[str, str]]:
         )
 
     preflight_line = next((line for line in makefile_text.splitlines() if line.startswith("preflight:")), "")
-    for target in ["summary", "artifact-index", "inventory"]:
+    for target in ["summary", "artifact-index", "pipeline-health", "inventory"]:
         status = "OK" if target in preflight_line else "WARN"
         add_check(
             rows,
