@@ -27,6 +27,7 @@
 - `docs/artifact-index.md` — стартовая страница артефактов сборки.
 - `docs/html-preview.md` — HTML-превью CSV-структуры для браузера.
 - `docs/github-pages-preview.md` — публикация HTML-превью через GitHub Pages.
+- `docs/pipeline-health.md` — проверка согласованности Makefile, workflow, генераторов и артефактов.
 - `docs/import-to-google-sheets.md` — порядок импорта CSV.
 - `docs/import-manifest.md` — ручной манифест импорта.
 - `docs/generated-import-plan.md` — генерируемый план импорта.
@@ -109,6 +110,7 @@
 - `scripts/tools/build_workbook_from_csv.py` — сборка XLSX.
 - `scripts/tools/build_html_preview.py` — сборка HTML-превью.
 - `scripts/tools/build_artifact_index.py` — стартовая страница артефактов.
+- `scripts/tools/build_pipeline_health_report.py` — отчет согласованности сборочного контура.
 - `scripts/tools/validate_html_preview.py` — smoke-проверка HTML-превью.
 - `scripts/tools/validate_workbook_sources.py` — проверка источников XLSX.
 - `scripts/tools/build_data_report.py` — отчёт по CSV-файлам.
@@ -144,8 +146,9 @@
 5. `docs/artifact-index.md`
 6. `docs/html-preview.md`
 7. `docs/github-pages-preview.md`
-8. `docs/project-index.md`
-9. `docs/google-sheets-mvp.md`
-10. `docs/private-google-sheet-setup.md`
-11. `docs/google-sheet-launch-checklist.md`
-12. `data/drafts/`
+8. `docs/pipeline-health.md`
+9. `docs/project-index.md`
+10. `docs/google-sheets-mvp.md`
+11. `docs/private-google-sheet-setup.md`
+12. `docs/google-sheet-launch-checklist.md`
+13. `data/drafts/`
