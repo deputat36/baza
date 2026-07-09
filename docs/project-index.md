@@ -40,6 +40,7 @@
 - `docs/google-apps-script-validation.md` — проверка закрытой Google Таблицы через Apps Script.
 - `docs/google-sheet-launch-checklist.md` — чек-лист запуска таблицы.
 - `docs/first-user-test.md` — сценарий первого теста.
+- `docs/office-pilot-plan.md` — недельный офисный пилот перед расширением базы на весь офис.
 - `docs/office-demo-script.md` — сценарий демонстрации на планёрке.
 - `docs/weekly-maintenance-regulation.md` — еженедельное обслуживание базы.
 - `docs/data-normalization-plan.md` — нормализация данных перед импортом.
@@ -150,5 +151,6 @@
 9. `docs/project-index.md`
 10. `docs/google-sheets-mvp.md`
 11. `docs/private-google-sheet-setup.md`
-12. `docs/google-sheet-launch-checklist.md`
-13. `data/drafts/`
+12. `docs/office-pilot-plan.md`
+13. `docs/google-sheet-launch-checklist.md`
+14. `data/drafts/`
