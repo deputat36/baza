@@ -25,6 +25,7 @@
 - `docs/html-preview.md` — как собрать HTML-превью для просмотра в браузере.
 - `docs/github-pages-preview.md` — как опубликовать HTML-превью через GitHub Pages.
 - `docs/pipeline-health.md` — как проверять согласованность Makefile, workflow, генераторов и артефактов.
+- `docs/office-pilot-plan.md` — как провести недельный офисный пилот перед расширением базы на весь офис.
 - `docs/manager-dashboard.md` — управленческая сводка для менеджера.
 - `docs/go-no-go-report.md` — итоговое решение GO/NO-GO перед запуском.
 - `docs/launch-decision-log.md` — фиксация управленческого решения запуска.
