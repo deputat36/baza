@@ -19,6 +19,8 @@ SHEETS = [
         "data/dictionaries/categories-core.csv",
         "data/dictionaries/freshness-policies.csv",
         "data/dictionaries/change-request-statuses.csv",
+        "data/dictionaries/training-stages.csv",
+        "data/dictionaries/training-competencies.csv",
     ]),
     ("Контакты", [
         "templates/contacts-template.csv",
@@ -63,6 +65,10 @@ SHEETS = [
         "data/drafts/contractors.csv",
     ]),
     ("Обучение", [
+        "data/drafts/training-learning-paths.csv",
+        "data/drafts/training-modules.csv",
+        "data/drafts/training-assessments.csv",
+        "data/drafts/training-materials-registry.csv",
         "data/drafts/training-checklists.csv",
         "data/drafts/user-scenarios.csv",
         "data/drafts/role-navigation-map.csv",
