@@ -15,7 +15,9 @@
 - `docs/concept.md` — концепция базы знаний.
 - `docs/structure.md` — сущности, категории и логика ID.
 - `docs/full-audit-training-integration.md` — полный аудит проекта и решение по объединению с обучением.
+- `docs/training-audit-scope-and-limitations.md` — область проверки и то, что требует дополнительной верификации.
 - `docs/training-system-architecture.md` — единая архитектура профессионального обучения и базы знаний.
+- `docs/training-pilot-plan.md` — двухнедельный пилот объединенной системы.
 - `docs/google-sheets-mvp.md` — MVP в Google Таблице.
 - `docs/google-sheet-layout.md` — макет листов.
 - `docs/private-google-sheet-setup.md` — настройка закрытой таблицы.
@@ -26,6 +28,7 @@
 ## Обучение и развитие
 
 - `docs/training-system-architecture.md` — роли, этапы, компетенции, практика и связь с `Космосом`.
+- `docs/training-pilot-plan.md` — проверка системы на новичке, СПН разных этапов и МОП.
 - `docs/role-training.md` — разделение профессионального обучения и обучения работе с базой.
 - `data/dictionaries/training-stages.csv` — этапы от кандидата до СПН 6+, наставничества и удержания.
 - `data/dictionaries/training-competencies.csv` — единый словарь компетенций.
@@ -58,7 +61,8 @@
 - `docs/google-apps-script-validation.md` — проверка закрытой Google Таблицы через Apps Script.
 - `docs/google-sheet-launch-checklist.md` — чек-лист запуска таблицы.
 - `docs/first-user-test.md` — сценарий первого теста.
-- `docs/office-pilot-plan.md` — недельный офисный пилот перед расширением базы на весь офис.
+- `docs/office-pilot-plan.md` — недельный пилот базы знаний.
+- `docs/training-pilot-plan.md` — двухнедельный пилот обучения и связи с `Космосом`.
 - `docs/office-demo-script.md` — сценарий демонстрации на планёрке.
 - `docs/weekly-maintenance-regulation.md` — еженедельное обслуживание базы.
 - `docs/data-normalization-plan.md` — нормализация данных перед импортом.
@@ -170,21 +174,23 @@
 1. `README.md`
 2. `docs/start-here.md`
 3. `docs/full-audit-training-integration.md`
-4. `docs/training-system-architecture.md`
-5. `docs/ui-preview.md`
-6. `docs/intermediate-preview.md`
-7. `docs/artifact-index.md`
-8. `docs/html-preview.md`
-9. `docs/github-pages-preview.md`
-10. `docs/pipeline-health.md`
-11. `docs/project-index.md`
-12. `docs/google-sheets-mvp.md`
-13. `docs/private-google-sheet-setup.md`
-14. `docs/office-pilot-plan.md`
-15. `docs/google-sheet-launch-checklist.md`
-16. `data/drafts/training-learning-paths.csv`
-17. `data/drafts/training-modules.csv`
-18. `data/drafts/evp-claims-registry.csv`
-19. `data/drafts/utp-borisoglebsk-catalog.csv`
-20. `data/drafts/realtor-value-map.csv`
-21. `data/drafts/`
+4. `docs/training-audit-scope-and-limitations.md`
+5. `docs/training-system-architecture.md`
+6. `docs/training-pilot-plan.md`
+7. `docs/ui-preview.md`
+8. `docs/intermediate-preview.md`
+9. `docs/artifact-index.md`
+10. `docs/html-preview.md`
+11. `docs/github-pages-preview.md`
+12. `docs/pipeline-health.md`
+13. `docs/project-index.md`
+14. `docs/google-sheets-mvp.md`
+15. `docs/private-google-sheet-setup.md`
+16. `docs/office-pilot-plan.md`
+17. `docs/google-sheet-launch-checklist.md`
+18. `data/drafts/training-learning-paths.csv`
+19. `data/drafts/training-modules.csv`
+20. `data/drafts/evp-claims-registry.csv`
+21. `data/drafts/utp-borisoglebsk-catalog.csv`
+22. `data/drafts/realtor-value-map.csv`
+23. `data/drafts/`
