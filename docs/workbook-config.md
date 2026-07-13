@@ -36,9 +36,12 @@
 - `data/drafts/training-modules.csv`;
 - `data/drafts/training-assessments.csv`;
 - `data/drafts/training-materials-registry.csv`;
+- `data/drafts/evp-claims-registry.csv`;
+- `data/drafts/utp-borisoglebsk-catalog.csv`;
+- `data/drafts/realtor-value-map.csv`;
 - существующие чек-листы, сценарии, приемочные тесты и план обучения работе с базой.
 
-Это позволяет видеть новую учебную архитектуру в XLSX, HTML-превью и плане импорта без отдельного генератора.
+Это позволяет видеть новую учебную архитектуру, EVP, УТП и карту ценности риелтора в XLSX, HTML-превью и плане импорта без отдельного генератора.
 
 ## Как добавить CSV в XLSX
 
