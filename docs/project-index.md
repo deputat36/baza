@@ -33,6 +33,9 @@
 - `data/drafts/training-modules.csv` — практические модули с подтверждением навыка.
 - `data/drafts/training-assessments.csv` — контрольные точки и критерии перехода.
 - `data/drafts/training-materials-registry.csv` — безопасный реестр мастер-материалов.
+- `data/drafts/evp-claims-registry.csv` — проверка локальных обещаний работодателя.
+- `data/drafts/utp-borisoglebsk-catalog.csv` — локальный каталог УТП с ограничениями и запрещенными формулировками.
+- `data/drafts/realtor-value-map.csv` — связь потребности клиента, действия риелтора, пользы и УТП.
 - `data/drafts/training-checklists.csv` — стартовые прикладные чек-листы.
 - `data/drafts/role-training-plan.csv` — обучение сотрудников работе с самой базой знаний.
 
@@ -112,6 +115,9 @@
 - `data/drafts/training-modules.csv` — модули обучения.
 - `data/drafts/training-assessments.csv` — контрольные точки обучения.
 - `data/drafts/training-materials-registry.csv` — реестр учебных источников.
+- `data/drafts/evp-claims-registry.csv` — проверка EVP.
+- `data/drafts/utp-borisoglebsk-catalog.csv` — проверка локальных УТП.
+- `data/drafts/realtor-value-map.csv` — карта ценности риелтора.
 - `data/drafts/common-mistakes.csv` — частые ошибки.
 - `data/drafts/user-scenarios.csv` — пользовательские сценарии.
 - `data/drafts/manager-review-checklist.csv` — чек-лист первичного просмотра менеджера.
@@ -178,4 +184,7 @@
 15. `docs/google-sheet-launch-checklist.md`
 16. `data/drafts/training-learning-paths.csv`
 17. `data/drafts/training-modules.csv`
-18. `data/drafts/`
+18. `data/drafts/evp-claims-registry.csv`
+19. `data/drafts/utp-borisoglebsk-catalog.csv`
+20. `data/drafts/realtor-value-map.csv`
+21. `data/drafts/`
