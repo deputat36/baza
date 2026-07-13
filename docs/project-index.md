@@ -6,7 +6,7 @@
 
 Репозиторий содержит безопасную публичную часть базы знаний: структуру, шаблоны, черновики и регламенты.
 
-Реальные телефоны, ФИО, внутренние контакты и закрытые условия должны храниться только в закрытой Google Таблице.
+Реальные телефоны, ФИО, внутренние контакты, результаты сотрудников и закрытые условия должны храниться только в закрытом контуре.
 
 ## Главные документы
 
@@ -14,12 +14,27 @@
 - `docs/start-here.md` — первый документ для просмотра проекта.
 - `docs/concept.md` — концепция базы знаний.
 - `docs/structure.md` — сущности, категории и логика ID.
+- `docs/full-audit-training-integration.md` — полный аудит проекта и решение по объединению с обучением.
+- `docs/training-system-architecture.md` — единая архитектура профессионального обучения и базы знаний.
 - `docs/google-sheets-mvp.md` — MVP в Google Таблице.
 - `docs/google-sheet-layout.md` — макет листов.
 - `docs/private-google-sheet-setup.md` — настройка закрытой таблицы.
 - `docs/google-apps-script-setup.md` — настройка закрытой таблицы через Apps Script.
 - `docs/mvp-release-plan.md` — план первого запуска.
 - `docs/repository-review.md` — обзор текущего состояния.
+
+## Обучение и развитие
+
+- `docs/training-system-architecture.md` — роли, этапы, компетенции, практика и связь с `Космосом`.
+- `docs/role-training.md` — разделение профессионального обучения и обучения работе с базой.
+- `data/dictionaries/training-stages.csv` — этапы от кандидата до СПН 6+, наставничества и удержания.
+- `data/dictionaries/training-competencies.csv` — единый словарь компетенций.
+- `data/drafts/training-learning-paths.csv` — ролевые маршруты обучения.
+- `data/drafts/training-modules.csv` — практические модули с подтверждением навыка.
+- `data/drafts/training-assessments.csv` — контрольные точки и критерии перехода.
+- `data/drafts/training-materials-registry.csv` — безопасный реестр мастер-материалов.
+- `data/drafts/training-checklists.csv` — стартовые прикладные чек-листы.
+- `data/drafts/role-training-plan.csv` — обучение сотрудников работе с самой базой знаний.
 
 ## Запуск, проверка и тестирование
 
@@ -92,7 +107,11 @@
 - `data/drafts/faq-real-estate.csv` — FAQ.
 - `data/drafts/new-buildings.csv` — новостройки.
 - `data/drafts/internal-office-roles-template.csv` — внутренние роли.
-- `data/drafts/training-checklists.csv` — обучение.
+- `data/drafts/training-checklists.csv` — стартовые обучающие чек-листы.
+- `data/drafts/training-learning-paths.csv` — маршруты обучения.
+- `data/drafts/training-modules.csv` — модули обучения.
+- `data/drafts/training-assessments.csv` — контрольные точки обучения.
+- `data/drafts/training-materials-registry.csv` — реестр учебных источников.
 - `data/drafts/common-mistakes.csv` — частые ошибки.
 - `data/drafts/user-scenarios.csv` — пользовательские сценарии.
 - `data/drafts/manager-review-checklist.csv` — чек-лист первичного просмотра менеджера.
@@ -104,6 +123,8 @@
 - `data/dictionaries/priorities.csv` — приоритеты.
 - `data/dictionaries/categories-core.csv` — категории.
 - `data/dictionaries/search-synonyms.csv` — поисковые синонимы.
+- `data/dictionaries/training-stages.csv` — этапы обучения.
+- `data/dictionaries/training-competencies.csv` — компетенции специалистов.
 
 ## Инструменты
 
@@ -142,15 +163,19 @@
 
 1. `README.md`
 2. `docs/start-here.md`
-3. `docs/ui-preview.md`
-4. `docs/intermediate-preview.md`
-5. `docs/artifact-index.md`
-6. `docs/html-preview.md`
-7. `docs/github-pages-preview.md`
-8. `docs/pipeline-health.md`
-9. `docs/project-index.md`
-10. `docs/google-sheets-mvp.md`
-11. `docs/private-google-sheet-setup.md`
-12. `docs/office-pilot-plan.md`
-13. `docs/google-sheet-launch-checklist.md`
-14. `data/drafts/`
+3. `docs/full-audit-training-integration.md`
+4. `docs/training-system-architecture.md`
+5. `docs/ui-preview.md`
+6. `docs/intermediate-preview.md`
+7. `docs/artifact-index.md`
+8. `docs/html-preview.md`
+9. `docs/github-pages-preview.md`
+10. `docs/pipeline-health.md`
+11. `docs/project-index.md`
+12. `docs/google-sheets-mvp.md`
+13. `docs/private-google-sheet-setup.md`
+14. `docs/office-pilot-plan.md`
+15. `docs/google-sheet-launch-checklist.md`
+16. `data/drafts/training-learning-paths.csv`
+17. `data/drafts/training-modules.csv`
+18. `data/drafts/`
